@@ -20,16 +20,19 @@ const DB_KEY = 'locs'
 var gSortBy = { rate: -1 }
 var gFilterBy = { txt: '', minRate: 0 }
 var gPageIdx
+var gUserPos
 
 _createLocs()
 
 export const locService = {
     query,
     getById,
+    getCurPos,
     remove,
     save,
     setFilterBy,
     setSortBy,
+    setUserPos,
     getLocCountByRateMap
 }
 
@@ -62,6 +65,11 @@ function query() {
             }
             return locs
         })
+}
+
+function getCurPos() {
+    if (!gUserPos) return
+    return gUserPos
 }
 
 function getById(locId) {
@@ -102,7 +110,12 @@ function getLocCountByRateMap() {
         })
 }
 
-function setSortBy(sortBy = {}) {
+function setUserPos(userPos) {
+    gUserPos = userPos
+    return gUserPos
+}
+
+    function setSortBy(sortBy = {}) {
     gSortBy = sortBy
 }
 

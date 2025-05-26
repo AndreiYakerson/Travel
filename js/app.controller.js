@@ -33,14 +33,20 @@ function onInit() {
 }
 
 function renderLocs(locs) {
+    var curUserPos = locService.getCurPos()
+    var elShowState = 'hidden'
     const selectedLocId = getLocIdFromQueryParams()
 
     var strHTML = locs.map(loc => {
         const className = (loc.id === selectedLocId) ? 'active' : ''
+        const distance = utilService.getDistance({ lat: loc.geo.lat, lng: loc.geo.lng }, { lat: curUserPos?.lat, lng: curUserPos?.lng }, 'k') || ''
+
+        if (distance > 0) elShowState = ''
         return `
         <li class="loc ${className}" data-id="${loc.id}">
             <h4>  
                 <span>${loc.name}</span>
+                <span ${elShowState}>Distance : ${distance} km</span>
                 <span title="${loc.rate} stars">${'★'.repeat(loc.rate)}</span>
             </h4>
             <p class="muted">
@@ -134,6 +140,7 @@ function onPanToUserPos() {
             unDisplayLoc()
             loadAndRenderLocs()
             flashMsg(`You are at Latitude: ${latLng.lat} Longitude: ${latLng.lng}`)
+            locService.setUserPos(latLng)
         })
         .catch(err => {
             console.error('OOPs:', err)
