@@ -123,8 +123,8 @@ function getLocCountByLastUpdate() {
                 const createdTime = loc.createdAt
                 
                 if (updatedTime === createdTime) map.never++
-                else if ((updatedTime - createdTime) < DAY) map.today++
-                else if ((updatedTime - createdTime) > DAY) map.past++
+                else if ((updatedTime - createdTime) > DAY) map.today++
+                else if ((updatedTime - createdTime) < DAY) map.past++
                 return map
             }, { today: 0, past: 0, never: 0 })
             locCountByLastUpdate.total = locs.length
