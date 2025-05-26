@@ -8,7 +8,7 @@ export const mapService = {
     addClickListener
 }
 
-const API_KEY = 'AIzaSyCprcESbiYN-oog7Bh4mTfvW3yvOUn2p-I'
+const API_KEY = 'AIzaSyD2Kd_xOK37FqjaQVKLW3uIiIcw-Xi8tPg'
 var gMap
 var gMarker
 
@@ -94,6 +94,7 @@ function _connectGoogleApi() {
 
     const elGoogleApi = document.createElement('script')
     elGoogleApi.src = `https://maps.googleapis.com/maps/api/js?key=${API_KEY}`
+    elGoogleApi.defer  = true
     elGoogleApi.async = true
     document.body.append(elGoogleApi)
 
