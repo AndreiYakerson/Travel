@@ -33,15 +33,20 @@ function onInit() {
 }
 
 function renderLocs(locs) {
-    var curUserPos = locService.getCurPos()
     var elShowState = 'hidden'
+    const curUserPos = locService.getCurPos()
     const selectedLocId = getLocIdFromQueryParams()
+    var distance = ''
 
     var strHTML = locs.map(loc => {
         const className = (loc.id === selectedLocId) ? 'active' : ''
-        const distance = utilService.getDistance({ lat: loc.geo.lat, lng: loc.geo.lng }, { lat: curUserPos?.lat, lng: curUserPos?.lng }, 'k') || ''
+        const locPos = { lat: loc.geo.lat, lng: loc.geo.lng }
 
-        if (distance > 0) elShowState = ''
+        if (curUserPos) {
+            distance = utilService.getDistance(locPos, curUserPos, 'k')
+            elShowState = 'show'
+        }
+
         return `
         <li class="loc ${className}" data-id="${loc.id}">
             <h4>  
@@ -178,6 +183,11 @@ function onSelectLoc(locId) {
 }
 
 function displayLoc(loc) {
+    var distance
+    const curUserPos = locService.getCurPos()
+    const locPos = { lat: loc.geo.lat, lng: loc.geo.lng }
+
+
     document.querySelector('.loc.active')?.classList?.remove('active')
     document.querySelector(`.loc[data-id="${loc.id}"]`).classList.add('active')
 
@@ -185,6 +195,7 @@ function displayLoc(loc) {
     mapService.setMarker(loc)
 
     const el = document.querySelector('.selected-loc')
+    if (curUserPos) el.querySelector('.loc-distance').innerText = utilService.getDistance(locPos, curUserPos, 'k')
     el.querySelector('.loc-name').innerText = loc.name
     el.querySelector('.loc-address').innerText = loc.geo.address
     el.querySelector('.loc-rate').innerHTML = '★'.repeat(loc.rate)

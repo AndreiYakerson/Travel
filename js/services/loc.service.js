@@ -67,6 +67,7 @@ function query() {
         })
 }
 
+
 function getCurPos() {
     if (!gUserPos) return
     return gUserPos
@@ -115,7 +116,7 @@ function setUserPos(userPos) {
     return gUserPos
 }
 
-    function setSortBy(sortBy = {}) {
+function setSortBy(sortBy = {}) {
     gSortBy = sortBy
 }
 
