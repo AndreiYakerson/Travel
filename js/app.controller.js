@@ -195,7 +195,7 @@ function displayLoc(loc) {
     mapService.setMarker(loc)
 
     const el = document.querySelector('.selected-loc')
-    if (curUserPos) el.querySelector('.loc-distance').innerText = utilService.getDistance(locPos, curUserPos, 'k')
+    if (curUserPos) el.querySelector('.loc-distance').innerText = utilService.getDistance(locPos, curUserPos, 'k') + ' km'
     el.querySelector('.loc-name').innerText = loc.name
     el.querySelector('.loc-address').innerText = loc.geo.address
     el.querySelector('.loc-rate').innerHTML = '★'.repeat(loc.rate)
