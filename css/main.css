@@ -8,6 +8,9 @@
 @import url(cmps/locs.css);
 @import url(cmps/selected-loc.css);
 @import url(cmps/user-msg.css);
+@import url(cmps/header.css);
+@import url(cmps/map.css);
+@import url(cmps/main-content.css);
 
 /* Setup  */
 @import url(setup/mq.css);
