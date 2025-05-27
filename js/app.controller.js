@@ -52,7 +52,7 @@ function renderLocs(locs) {
             <h4>  
                 <span>${loc.name}</span>
                 <span ${elShowState}>Distance : ${distance} km</span>
-                <span title="${loc.rate} stars">${'★'.repeat(loc.rate)}</span>
+                <span class="stars" title="${loc.rate} stars">${'★'.repeat(loc.rate)}</span>
             </h4>
             <p class="muted">
                 Created: ${utilService.elapsedTime(loc.createdAt)}
@@ -60,7 +60,7 @@ function renderLocs(locs) {
                 ` | Updated: ${utilService.elapsedTime(loc.updatedAt)}`
                 : ''}
             </p>
-            <div class="loc-btns">     
+            <div class="loc-btns justify-self">     
                <button title="Delete" onclick="app.onRemoveLoc('${loc.id}')">🗑️</button>
                <button title="Edit" onclick="app.onUpdateLoc('${loc.id}')">✏️</button>
                <button title="Select" onclick="app.onSelectLoc('${loc.id}')">🗺️</button>

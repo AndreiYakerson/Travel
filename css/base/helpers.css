@@ -1,0 +1,23 @@
+.justify-content {
+    justify-content: center;
+}
+
+.justify-self {
+    justify-self: center;
+}
+
+.align-items {
+    align-items: center;
+}
+
+.align-content {
+    align-content: center;
+}
+
+.place-items {
+    place-items: center;
+}
+
+.place-content {
+    place-content: center;
+}

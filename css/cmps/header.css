@@ -1,0 +1,9 @@
+
+header {
+    grid-column: 1/-1;
+
+    background-color: var(--clr-sec--1);
+    color: var(--clr-primary-base);
+    padding: 0.3em;
+}
+
