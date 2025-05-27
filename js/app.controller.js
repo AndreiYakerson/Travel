@@ -90,7 +90,7 @@ function onRemoveLoc(locId) {
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
-        confirmButtonText: "Yes, delete it!"
+        confirmButtonText: "Yes, delete it!",
     }).then((result) => {
         if (result.isConfirmed) {
 
@@ -110,6 +110,7 @@ function onRemoveLoc(locId) {
                 icon: "success",
                 background: "purple",
                 color: "white",
+                timer: "3000"
             });
         }
     });
@@ -173,6 +174,7 @@ function onAddLoc(geo) {
                     icon: "success",
                     background: "purple",
                     color: "white",
+                    timer: "3000"
                 })
             }
 
@@ -248,7 +250,8 @@ function onUpdateLoc(locId) {
                     background: "purple",
                     showConfirmButton: true,
                     confirmButtonColor: "#3085d6",
-                    confirmButtonText: "Ok"
+                    confirmButtonText: "Ok",
+                    timer: "3000"
                 })
             }
 
