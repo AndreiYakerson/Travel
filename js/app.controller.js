@@ -85,6 +85,8 @@ function onRemoveLoc(locId) {
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         icon: "warning",
+        color: "white",
+        background: "purple",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
@@ -102,11 +104,13 @@ function onRemoveLoc(locId) {
                     console.error('OOPs:', err)
                     flashMsg('Cannot remove location')
                 })
-                
+
             Swal.fire({
                 title: "Deleted!",
                 text: "Your location has been deleted.",
-                icon: "success"
+                icon: "success",
+                background: "purple",
+                color: "white",
             });
         }
     });
