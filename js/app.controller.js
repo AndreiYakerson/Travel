@@ -130,24 +130,56 @@ function onSearchAddress(ev) {
 }
 
 function onAddLoc(geo) {
-    const locName = prompt('Loc name', geo.address || 'Just a place')
-    if (!locName) return
+    const locName = geo.address || 'Just a place'
 
-    const loc = {
-        name: locName,
-        rate: +prompt(`Rate (1-5)`, '3'),
-        geo
-    }
-    locService.save(loc)
-        .then((savedLoc) => {
-            flashMsg(`Added Location (id: ${savedLoc.id})`)
-            utilService.updateQueryParams({ locId: savedLoc.id })
-            loadAndRenderLocs()
-        })
-        .catch(err => {
-            console.error('OOPs:', err)
-            flashMsg('Cannot add location')
-        })
+    const { value: formValues } = Swal.fire({
+        title: `Enter location name
+         and rate:`,
+        html: `
+            <label for="">Place: 
+          <input placeholder="Place name" id="swal-input1" value="${locName}" class="swal2-input">
+          </label><br>
+            <label for="">Rate: 
+          <input placeholder="Rate (1-5)" id="swal-input2" value="3" class="swal2-input">
+            </label>
+        `,
+        showCancelButton: true,
+        focusConfirm: false,
+        preConfirm: (result) => {
+            const placeValue = document.getElementById("swal-input1").value
+            const ratingValue = document.getElementById("swal-input2").value
+
+            if (!locName) return
+
+            const loc = {
+                name: placeValue,
+                rate: ratingValue,
+                geo
+            }
+            locService.save(loc)
+                .then((savedLoc) => {
+                    utilService.updateQueryParams({ locId: savedLoc.id })
+                    loadAndRenderLocs()
+                })
+                .catch(err => {
+                    console.error('OOPs:', err)
+                    flashMsg('Cannot add location')
+                })
+
+            if (result) {
+                Swal.fire({
+                    title: "New location added",
+                    text: `Place: ${loc.name}`,
+                    icon: "success",
+                    background: "purple",
+                    color: "white",
+                })
+            }
+
+        }
+    })
+
+
 }
 
 function loadAndRenderLocs() {
