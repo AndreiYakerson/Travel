@@ -1,4 +1,30 @@
 :root {
+    /* Color palette */
+
+    /* Primary (Rich Black) */
+  --clr-Primary--1: #3A3A3D;   /* noticeably lighter black */
+  --clr-Primary-base: #1F1F21; /* main soft black */
+  --clr-Primary-1: #0A0A0B;    /* deep black */
+
+  /* Secondary (Neutral Grays) */
+  --clr-sec--1: #E0E2E6;       /* brighter neutral gray */
+  --clr-sec-base: #C0C3C9;     /* balanced soft gray */
+  --clr-sec-1: #8F939A;        /* deeper neutral gray */
+
+  /* Accent (Indigo / Violet) */
+ --clr-third--1: #5A7FCF;   /* brighter indigo-blue */
+  --clr-third-base: #3F5BAA; /* balanced deep blue-indigo */
+  --clr-third-1: #2A3E74;    /* darker, cool navy */
+
+/* Special component colors */
+  --clr-input: #f0f0f0;        /* deeper neutral gray */
+  --clr-selected: gold;
+  --clr-rate: goldenrod;
+
+
+}
+
+/* :root {
     --bg1: darkslateblue;
     --bg2: darkorchid;
     --bg3: darkmagenta;
@@ -7,7 +33,7 @@
     --color3: gold;
     --color4: goldenrod;
     --gray1: lightgray;
-}
+} */
 
 /* Another theme */
 /* :root {
