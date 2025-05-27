@@ -24,11 +24,11 @@
 }
 
 .loc-list li.active {
-    color: var(--color3);
+    color: var(--clr-selected);
 }
 
 .loc-list li.active .muted{
-    color: var(--color4);
+    color: var(--clr-third--1);
 }
 
 .loc-btns {
@@ -42,18 +42,20 @@
 }
 
 .btn-user-pos {
-    background-color: var(--bg2);
-    background-image: url(../../img/user-loc.png);
-    background-size: cover;
     width: 2em;
     height: 2em;
+
+    background-size: cover;
+    background-image: url(../../img/user-loc.png);
+    background-color: var(--clr-third--1);
 }
+
 .btn-user-pos:hover {
-    background-color: whitesmoke;
+    background-color: var(--clr-sec--1 );
 }
 
 .loc-filter {
-    background-color: var(--bg1);
+    background-color: var(--clr-input);
     padding: 0.3em;
 }
 
