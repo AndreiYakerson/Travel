@@ -1,33 +1,60 @@
-
-.locs-container-div{
+.locs-container {
     grid-column: 1;
+
+    padding: 0.5em;
+
+    height: fit-content;
+
+    background-color: var(--clr-sec-base);
 }
 
-.locs-container {
-    background-color: var(--bg3);
-    padding: 0.5em;
-    min-height: 100vh;
+.locs-header {
+    margin: 1em;
+
+    text-decoration: dashed underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+    text-align: center;
+    color: var(--clr-third-base);
 }
 
 .loc-list {
+    display: grid;
+
+    gap: 1em;
+
     list-style: none;
-    padding: 0;
 }
 
 .loc-list li {
-    padding-bottom: .2em;
-    border-bottom: 1px solid #222;
+    display: grid;
+    grid-template-rows: ;
+    padding: .5em;
+    gap: .5em;
+
+    border-radius: 1vh;
+    background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
+
+    border: 1px solid var(--clr-primary--1);
 }
+
 .loc-list li h4 {
     display: flex;
+
     justify-content: space-between;
+
+}
+
+.loc-list li.active .stars {
+    color: var(--clr-rate);
 }
 
 .loc-list li.active {
-    color: var(--clr-selected);
+    font-size: 1.2em;
+    color: var(--clr-primary-1);
 }
 
-.loc-list li.active .muted{
+.loc-list li.active .muted {
     color: var(--clr-third--1);
 }
 
@@ -51,14 +78,21 @@
 }
 
 .btn-user-pos:hover {
-    background-color: var(--clr-sec--1 );
+    background-color: var(--clr-sec--1);
 }
 
 .loc-filter {
-    background-color: var(--clr-input);
     padding: 0.3em;
-}
+    border-radius: 1vh;
+    border: 1px var(--clr-primary--1) solid;
+    background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
 
+}
+.sort-by{
+    border-radius: 1vh;
+    background-color: var(--clr-input);
+    /* background-color: #f0f0f0; */
+}
 .loc-filter input[type=text] {
     width: 98%;
     margin-bottom: .5em;
@@ -66,10 +100,27 @@
 
 .pie {
     display: inline-block;
+
+    margin-top: 1em;
+
     width: 120px;
     height: 120px;
     border-radius: 50%;
     /* background-image: conic-gradient(orange 0%, orange 64%, blue 64%, blue 81%, black 81%, black 100%); */
+}
+
+.loc-stats {
+    display: grid;
+
+    gap: 1em;
+    margin-top: 1em;
+
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+    text-align: center;
+
+    color: var(--clr-third-base);
 }
 
 .loc-stats ul {
