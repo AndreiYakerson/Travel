@@ -48,7 +48,7 @@ function renderLocs(locs) {
         }
 
         return `
-        <li class="loc ${className}" data-id="${loc.id}">
+        <li onclick="app.onSelectLoc('${loc.id}')" class="loc ${className}" data-id="${loc.id}">
             <h4>  
                 <span>${loc.name}</span>
                 <span ${elShowState}>Distance : ${distance} km</span>
