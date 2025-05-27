@@ -96,7 +96,6 @@ function onRemoveLoc(locId) {
 
             locService.remove(locId)
                 .then(() => {
-                    flashMsg('Location removed')
                     unDisplayLoc()
                     loadAndRenderLocs()
                 })
@@ -176,24 +175,55 @@ function onPanToUserPos() {
 }
 
 function onUpdateLoc(locId) {
-    locService.getById(locId)
-        .then(loc => {
-            const rate = prompt('New rate?', loc.rate)
-            if (rate && rate !== loc.rate) {
-                loc.rate = rate
-                locService.save(loc)
-                    .then(savedLoc => {
-                        flashMsg(`Rate was set to: ${savedLoc.rate}`)
-                        loadAndRenderLocs()
-                    })
-                    .catch(err => {
-                        console.error('OOPs:', err)
-                        flashMsg('Cannot update location')
-                    })
 
+    const { value: fruit } = Swal.fire({
+        title: "Select rating",
+        input: "select",
+        inputOptions: {
+            Raiting: {
+                1: "⭐️",
+                2: "⭐️⭐️",
+                3: "⭐️⭐️⭐️",
+                4: "⭐️⭐️⭐️⭐️",
+                5: "⭐️⭐️⭐️⭐️⭐️"
             }
-        })
+        },
+        inputPlaceholder: "Select rating",
+        showCancelButton: true,
+        inputValidator: (value) => {
+            if (value) {
+                locService.getById(locId)
+                    .then(loc => {
+                        if (value && value !== loc.rate) {
+                            loc.rate = value
+                            locService.save(loc)
+                                .then(savedLoc => {
+                                    flashMsg(`Rate was set to: ${savedLoc.rate}`)
+                                    loadAndRenderLocs()
+                                })
+                                .catch(err => {
+                                    console.error('OOPs:', err)
+                                    flashMsg('Cannot update location')
+                                })
+
+                        }
+                    })
+            }
+            if (value) {
+                Swal.fire({
+                    title: `Updated to: ${'⭐️'.repeat(value)}`,
+                    color: "white",
+                    background: "purple",
+                    showConfirmButton: true,
+                    confirmButtonColor: "#3085d6",
+                    confirmButtonText: "Ok"
+                })
+            }
+
+        }
+    })
 }
+
 
 function onSelectLoc(locId) {
     return locService.getById(locId)
