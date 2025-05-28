@@ -31,10 +31,7 @@
 /* location container */
 .loc-list li {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr fit-content;
-
-
+    grid-template-rows: ;
     padding: .5em;
     gap: .5em;
 
@@ -44,6 +41,11 @@
 
     border: 1px solid var(--clr-primary--1);
 }
+
+.loc-list li span {
+    margin-inline-end: 1em;
+}
+
 
 .loc-list li h4 {
     display: grid;
@@ -85,11 +87,6 @@
 }
 
 
-.form-search {
-    display: block;
-    text-align: end;
-}
-
 .btn-user-pos {
     width: 2em;
     height: 2em;
@@ -104,7 +101,10 @@
 }
 
 .loc-filter {
+    margin-top: 1em;
+
     padding: 0.3em;
+
     border-radius: 1vh;
     border: 1px var(--clr-primary--1) solid;
     background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
