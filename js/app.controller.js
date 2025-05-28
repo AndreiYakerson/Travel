@@ -98,7 +98,7 @@ function onSearchAddress(ev) {
 
 function onAddLoc(geo) {
     const locName = geo.address || 'Just a place'
-    showAddModal(locName,geo)
+    showAddModal(locName, geo)
 }
 
 function loadAndRenderLocs() {
@@ -295,7 +295,7 @@ function cleanStats(stats) {
     return cleanedStats
 }
 
-function showAddModal(locName,geo) {
+function showAddModal(locName, geo) {
     Swal.fire({
         title: `Enter location name
          and rate:`,
@@ -307,36 +307,51 @@ function showAddModal(locName,geo) {
           <input placeholder="Rate (1-5)" id="swal-input2" value="3" class="swal2-input">
             </label>
         `,
+        color: "#3F5BAA",
+        background: "#f0f0f0",
         showCancelButton: true,
         focusConfirm: true,
         preConfirm: (result) => {
             const placeValue = document.getElementById("swal-input1").value
             const ratingValue = document.getElementById("swal-input2").value
 
-            if (!locName) return
+            if (result && placeValue && ratingValue) {
 
-            const loc = {
-                name: placeValue,
-                rate: ratingValue,
-                geo
-            }
-            locService.save(loc)
-                .then((savedLoc) => {
-                    utilService.updateQueryParams({ locId: savedLoc.id })
-                    loadAndRenderLocs()
-                })
-                .catch(err => {
-                    console.error('OOPs:', err)
-                    flashMsg('Cannot add location')
-                })
 
-            if (result) {
+                const loc = {
+                    name: placeValue,
+                    rate: ratingValue,
+                    geo
+                }
+                locService.save(loc)
+                    .then((savedLoc) => {
+                        utilService.updateQueryParams({ locId: savedLoc.id })
+                        loadAndRenderLocs()
+                    })
+                    .catch(err => {
+                        console.error('OOPs:', err)
+                        flashMsg('Cannot add location')
+                    })
+
+                if (result) {
+                    Swal.fire({
+                        title: "New location added",
+                        text: `Place: ${loc.name}`,
+                        icon: "success",
+                        iconColor: "#3F5BAA",
+                        color: "#3F5BAA",
+                        background: "#f0f0f0",
+                        timer: "3000",
+                        timerProgressBar: true,
+                    })
+                }
+            } else {
                 Swal.fire({
-                    title: "New location added",
-                    text: `Place: ${loc.name}`,
-                    icon: "success",
-                    background: "purple",
-                    color: "white",
+                    title: "Error",
+                    text: `Required place and rate!`,
+                    icon: "error",
+                    background: "#f0f0f0",
+                    color: "#3F5BAA",
                     timer: "3000"
                 })
             }
@@ -361,6 +376,8 @@ function showUpdateModal(locId) {
                 <input placeholder="Rate (1-5)" id="swal-input2" value="${objLoc.rate}" class="swal2-input">
                 </label>
                 `,
+                color: "#3F5BAA",
+                background: "#f0f0f0",
                 showCancelButton: true,
                 focusConfirm: true,
                 preConfirm: (result) => {
@@ -384,8 +401,9 @@ function showUpdateModal(locId) {
                                     title: "New location added",
                                     text: `Place: ${loc.name}`,
                                     icon: "success",
-                                    background: "purple",
-                                    color: "white",
+                                    iconColor: "#3F5BAA",
+                                    color: "#3F5BAA",
+                                    background: "#f0f0f0",
                                     timer: "3000"
                                 })
                             })
@@ -394,8 +412,8 @@ function showUpdateModal(locId) {
                             title: "Error",
                             text: `Required place and rate!`,
                             icon: "error",
-                            background: "purple",
-                            color: "white",
+                            background: "#f0f0f0",
+                            color: "#3F5BAA",
                             timer: "3000"
                         })
                     }
@@ -410,8 +428,9 @@ function showRemoveModal(locId) {
         title: "Are you sure?",
         text: "You won't be able to revert this!",
         icon: "warning",
-        color: "white",
-        background: "purple",
+        iconColor: "red",
+        color: "#3F5BAA",
+        background: "#f0f0f0",
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
@@ -433,8 +452,9 @@ function showRemoveModal(locId) {
                 title: "Deleted!",
                 text: "Your location has been deleted.",
                 icon: "success",
-                background: "purple",
-                color: "white",
+                iconColor: "#3F5BAA",
+                color: "#3F5BAA",
+                background: "#f0f0f0",
                 timer: "3000"
             });
         }
