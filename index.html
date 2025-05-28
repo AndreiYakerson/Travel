@@ -21,10 +21,13 @@
             <input name="loc-copier" />
         </section>
         <form class="form-search" onsubmit="app.onSearchAddress(event)">
-            <input type="text" name="address" placeholder="Search address" />
-            <button title="Search">🔍</button>
-            <button type="button" title="My Position" onclick="app.onPanToUserPos()" class="btn-user-pos">&nbsp;
-            </button>
+            <div class="search-container">
+                <h4 class="search-header">Search For Location</h4>
+                <input type="text" name="address" placeholder="Search address" />
+                <button title="Search">🔍</button>
+                <button type="button" title="My Position" onclick="app.onPanToUserPos()" class="btn-user-pos">&nbsp;
+                </button>
+            </div>
         </form>
     </header>
     <main class="main-content-layout">

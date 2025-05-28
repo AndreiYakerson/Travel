@@ -1,9 +1,48 @@
-
 header {
+    display: grid;
+    grid-template-columns: minmax(auto, 60%) minmax(20%, 1fr);
     grid-column: 1/-1;
 
-    background-color: var(--clr-sec--1);
-    color: var(--clr-primary-base);
     padding: 0.3em;
+
+
+    color: var(--clr-primary-base);
+    background-color: var(--clr-sec--1);
 }
 
+header h1 {
+    grid-column: 1/-1;
+
+    font-family: 'Rubik_Doodle_Shadow';
+
+    margin: .5em;
+
+    letter-spacing: .25em;
+    text-align: center;
+}
+
+.search-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr;    
+    grid-auto-flow: column;
+
+    padding: 1em;
+    /* min-width: fit-content; */
+}
+.search-container button{
+grid-row: 2;
+}
+
+.search-container input{
+
+}
+
+.form-search {
+
+    margin: auto;
+
+    grid-auto-flow: column;
+    text-align: end;
+}
+
+.search-header {}

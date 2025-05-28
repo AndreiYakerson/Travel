@@ -1,5 +1,6 @@
 html{
     margin: .5em;
+    font-family: 'fredoka', sans-serif;
     background-color: var(--clr-primary-1);
     color: var(--clr-primary-base);
 }
