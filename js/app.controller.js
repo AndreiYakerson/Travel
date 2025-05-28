@@ -133,7 +133,7 @@ function onSearchAddress(ev) {
 function onAddLoc(geo) {
     const locName = geo.address || 'Just a place'
 
-    const { value: formValues } = Swal.fire({
+    Swal.fire({
         title: `Enter location name
          and rate:`,
         html: `
@@ -145,7 +145,7 @@ function onAddLoc(geo) {
             </label>
         `,
         showCancelButton: true,
-        focusConfirm: false,
+        focusConfirm: true,
         preConfirm: (result) => {
             const placeValue = document.getElementById("swal-input1").value
             const ratingValue = document.getElementById("swal-input2").value
@@ -210,54 +210,67 @@ function onPanToUserPos() {
 
 function onUpdateLoc(locId) {
 
-    const { value: fruit } = Swal.fire({
-        title: "Select rating",
-        input: "select",
-        inputOptions: {
-            Raiting: {
-                1: "⭐️",
-                2: "⭐️⭐️",
-                3: "⭐️⭐️⭐️",
-                4: "⭐️⭐️⭐️⭐️",
-                5: "⭐️⭐️⭐️⭐️⭐️"
-            }
-        },
-        inputPlaceholder: "Select rating",
-        showCancelButton: true,
-        inputValidator: (value) => {
-            if (value) {
-                locService.getById(locId)
-                    .then(loc => {
-                        if (value && value !== loc.rate) {
-                            loc.rate = value
-                            locService.save(loc)
-                                .then(savedLoc => {
-                                    flashMsg(`Rate was set to: ${savedLoc.rate}`)
-                                    loadAndRenderLocs()
-                                })
-                                .catch(err => {
-                                    console.error('OOPs:', err)
-                                    flashMsg('Cannot update location')
-                                })
+    locService.getById(locId)
+        .then(loc => {
+            const objLoc = JSON.parse(JSON.stringify(loc))
 
-                        }
-                    })
-            }
-            if (value) {
-                Swal.fire({
-                    title: `Updated to: ${'⭐️'.repeat(value)}`,
-                    color: "white",
-                    background: "purple",
-                    showConfirmButton: true,
-                    confirmButtonColor: "#3085d6",
-                    confirmButtonText: "Ok",
-                    timer: "3000"
-                })
-            }
+            Swal.fire({
+                title: `Enter location name
+                and rate:`,
+                html: `
+                <label for="">Place: 
+                <input placeholder="Place name" id="swal-input1" value="${objLoc.name}" class="swal2-input">
+                </label><br>
+                <label for="">Rate: 
+                <input placeholder="Rate (1-5)" id="swal-input2" value="${objLoc.rate}" class="swal2-input">
+                </label>
+                `,
+                showCancelButton: true,
+                focusConfirm: true,
+                preConfirm: (result) => {
+                    const placeValue = document.getElementById("swal-input1").value
+                    const ratingValue = document.getElementById("swal-input2").value
 
-        }
-    })
+                    if (result && placeValue && ratingValue) {
+                        locService.getById(locId)
+                            .then(loc => {
+                                loc.name = placeValue
+                                loc.rate = ratingValue
+                                locService.save(loc)
+                                    .then(() => loadAndRenderLocs())
+                                    .catch(err => {
+                                        console.error('OOPs:', err)
+                                        flashMsg('Cannot update location')
+
+                                    })
+
+                                Swal.fire({
+                                    title: "New location added",
+                                    text: `Place: ${loc.name}`,
+                                    icon: "success",
+                                    background: "purple",
+                                    color: "white",
+                                    timer: "3000"
+                                })
+                            })
+                    } else {
+                        Swal.fire({
+                            title: "Error",
+                            text: `Required place and rate!`,
+                            icon: "error",
+                            background: "purple",
+                            color: "white",
+                            timer: "3000"
+                        })
+                    }
+                }
+
+            })
+        })
+
 }
+
+
 
 
 function onSelectLoc(locId) {
