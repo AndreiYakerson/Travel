@@ -1,4 +1,5 @@
 .selected-loc {
+    grid-column: 1;
     max-height: 0em;
     height: 0;
     overflow: hidden;

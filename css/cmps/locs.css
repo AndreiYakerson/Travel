@@ -2,8 +2,8 @@
     grid-column: 1;
 
     padding: 0.5em;
-
-    height: fit-content;
+    min-width: 350px;
+    /* height: fit-content; */
 
     background-color: var(--clr-sec-base);
 }
@@ -28,7 +28,7 @@
 
 .loc-list li {
     display: grid;
-    grid-template-rows: ;
+    grid-template-rows: 1fr 1fr30px;
     padding: .5em;
     gap: .5em;
 
@@ -37,6 +37,11 @@
 
     border: 1px solid var(--clr-primary--1);
 }
+
+.loc-list li span {
+    margin-inline-end: 1em;
+}
+
 
 .loc-list li h4 {
     display: flex;
@@ -63,11 +68,6 @@
 }
 
 
-.form-search {
-    display: block;
-    text-align: end;
-}
-
 .btn-user-pos {
     width: 2em;
     height: 2em;
@@ -82,17 +82,22 @@
 }
 
 .loc-filter {
+    margin-top: 1em;
+
     padding: 0.3em;
+
     border-radius: 1vh;
     border: 1px var(--clr-primary--1) solid;
     background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
 
 }
-.sort-by{
+
+.sort-by {
     border-radius: 1vh;
     background-color: var(--clr-input);
     /* background-color: #f0f0f0; */
 }
+
 .loc-filter input[type=text] {
     width: 98%;
     margin-bottom: .5em;
