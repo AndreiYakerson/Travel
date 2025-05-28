@@ -1,10 +1,7 @@
 .locs-container {
     grid-column: 1;
-    /* grid-row: 1/2; */
     
     padding: 0.5em;
-    /* min-width: 350px;    min-width: 280px; */
-    height: 100vh;
 
     background-color: var(--clr-sec-base);
 }
@@ -31,7 +28,6 @@
 /* location container */
 .loc-list li {
     display: grid;
-    grid-template-rows: ;
     padding: .5em;
     gap: .5em;
 

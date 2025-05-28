@@ -114,9 +114,7 @@ function getLocCountByRateMap() {
 
 function getLocCountByLastUpdate() {
     return storageService.query(DB_KEY)
-        .then(locs => {
-            console.log(locs);
-            
+        .then(locs => {            
             const locCountByLastUpdate = locs.reduce((map, loc) => {
                 const DAY = 1000 * 60 * 60 * 24
                 const updatedTime = loc.updatedAt
