@@ -23,26 +23,14 @@ header h1 {
 
 .search-container {
     display: grid;
-    grid-template-rows: 1fr 1fr;    
     grid-auto-flow: column;
 
     padding: 1em;
-    /* min-width: fit-content; */
-}
-.search-container button{
-grid-row: 2;
-}
-
-.search-container input{
-
 }
 
 .form-search {
-
     margin: auto;
 
     grid-auto-flow: column;
     text-align: end;
 }
-
-.search-header {}

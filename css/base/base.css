@@ -1,4 +1,4 @@
-html{
+html {
     margin: .5em;
     font-family: 'fredoka', sans-serif;
     background-color: var(--clr-primary-1);
@@ -6,28 +6,27 @@ html{
 }
 
 body {
-    background-color: var( --clr-sec--1);
-    /* color: #eee; */
+    background-color: var(--clr-sec--1);
     overflow-x: hidden;
 }
 
-input[type=text],input[type=number] {
+input[type=text],
+input[type=number] {
     line-height: 2em;
     border-radius: .5vh;
     background-color: var(--clr-input);
 }
 
 button {
-    /* color: whitesmoke; */
     padding: 6px 10px;
     margin: 2px;
-    
+
     cursor: pointer;
     transition: background-color .5s;
-    
+
     border: 0;
     border-radius: .2em;
-    background-color:var(--clr-third-1);
+    background-color: var(--clr-third-1);
 }
 
 button:hover {
@@ -43,4 +42,3 @@ button:hover {
 .smaller {
     font-size: .8em;
 }
-

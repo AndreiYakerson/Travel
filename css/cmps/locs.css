@@ -1,6 +1,6 @@
 .locs-container {
     grid-column: 1;
-    
+
     padding: 0.5em;
 
     background-color: var(--clr-sec-base);
@@ -28,14 +28,15 @@
 /* location container */
 .loc-list li {
     display: grid;
+
     padding: .5em;
     gap: .5em;
 
     text-align: center;
+    
+    border: 1px solid var(--clr-primary--1);
     border-radius: 1vh;
     background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
-
-    border: 1px solid var(--clr-primary--1);
 }
 
 .loc-list li span {
@@ -50,7 +51,6 @@
 
     justify-content: space-between;
     gap: 1em;
-
 }
 
 .loc-list li .stars {
@@ -69,7 +69,6 @@
 
 .loc-list li .muted {
     grid-column: 1 / -1;
-
 }
 
 .loc-list li.active .muted {
@@ -79,6 +78,7 @@
 .loc-btns {
     grid-column: 1/-1;
     grid-row: 3;
+
     text-align: end;
 }
 
@@ -110,11 +110,11 @@
 .sort-by {
     border-radius: 1vh;
     background-color: var(--clr-input);
-    /* background-color: #f0f0f0; */
 }
 
 .loc-filter input[type=text] {
     width: 98%;
+    
     margin-bottom: .5em;
 }
 
@@ -125,6 +125,7 @@
 
     width: 120px;
     height: 120px;
+    
     border-radius: 50%;
     /* background-image: conic-gradient(orange 0%, orange 64%, blue 64%, blue 81%, black 81%, black 100%); */
 }
@@ -144,15 +145,20 @@
 }
 
 .loc-stats ul {
-    list-style-type: none;
     display: inline-block;
+
+    list-style-type: none;
+    
     text-transform: capitalize;
 }
 
 .loc-stats .pie-label {
     display: inline-block;
-    background-color: black;
+    
+    margin-inline-end: 0.3em;
+    
     width: 1em;
     height: 1em;
-    margin-inline-end: 0.3em;
+    
+    background-color: black;
 }
