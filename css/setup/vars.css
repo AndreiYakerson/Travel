@@ -20,8 +20,27 @@
   --clr-input: #f0f0f0;        /* deeper neutral gray */
   --clr-selected: #5cdbf8;
   --clr-rate: gold;
+}
 
+.theme-1 {
+  --clr-primary--1: #010114;   /* noticeably lighter black */
+  --clr-primary-base: gold; /* main soft black */
+  --clr-primary-1: gold;    /* deep black */
 
+  /* Secondary (Neutral Grays) */
+  --clr-sec--1: #0e54b6;       /* brighter neutral gray */
+  --clr-sec-base: #73acec;     /* balanced soft gray */
+  --clr-sec-1: #1a91cd;        /* deeper neutral gray */
+
+  /* Accent (Indigo / Violet) */
+ --clr-third--1: #5A7FCF;   /* brighter indigo-blue */
+  --clr-third-base: #3F5BAA; /* balanced deep blue-indigo */
+  --clr-third-1: #00060b;    /* darker, cool navy */
+
+  /* Special component colors */
+  --clr-input: #f0f0f0;        /* deeper neutral gray */
+  --clr-selected: #5cdbf8;
+  --clr-rate: gold;
 }
 
 /* Another theme */
