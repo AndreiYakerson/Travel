@@ -51,7 +51,7 @@ function renderLocs(locs) {
         <li onclick="app.onSelectLoc('${loc.id}')" class="loc ${className}" data-id="${loc.id}">
             <h4>  
                 <span>${loc.name}</span>
-                <span ${elShowState}>Distance : ${distance} km</span>
+                <span ${elShowState}>Distance ${distance} km</span>
                 <span class="stars" title="${loc.rate} stars">${'★'.repeat(loc.rate)}</span>
             </h4>
             <p class="muted">
