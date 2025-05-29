@@ -24,6 +24,30 @@
 
 }
 
+.theme-1 {
+  /* Color palette theme-1 */
+
+    /* Primary*/
+    --clr-primary--1: gold;   
+    --clr-primary-base: gold; 
+    --clr-primary-1: gold;    
+  
+    /* Secondary*/
+    --clr-sec--1: #0a65c6;
+    --clr-sec-base: #6482ce;
+    --clr-sec-1: #1766d4;
+  
+    /* Accent*/
+   --clr-third--1: #0f44ca;   
+    --clr-third-base: #0609a7; 
+    --clr-third-1: #2a6674;    
+  
+  /* Special component colors */
+    --clr-input: white;        
+    --clr-selected: #5cdbf8;
+    --clr-rate: gold;
+}
+
 /* Another theme */
 /* :root {
     --bg1: rgb(37, 13, 195);
