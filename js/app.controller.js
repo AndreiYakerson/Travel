@@ -16,6 +16,7 @@ window.app = {
     onShareLoc,
     onSetSortBy,
     onSetFilterBy,
+    onChangeTheme,
 }
 
 function onInit() {
@@ -81,6 +82,7 @@ function renderLocs(locs) {
 
 function onRemoveLoc(locId) {
     showRemoveModal(locId)
+    showRemoveModal(locId)
 }
 
 function onSearchAddress(ev) {
@@ -98,6 +100,7 @@ function onSearchAddress(ev) {
 
 function onAddLoc(geo) {
     const locName = geo.address || 'Just a place'
+    showAddModal(locName, geo)
     showAddModal(locName, geo)
 }
 
@@ -126,6 +129,7 @@ function onPanToUserPos() {
 }
 
 function onUpdateLoc(locId) {
+    showUpdateModal(locId)
     showUpdateModal(locId)
 }
 
@@ -458,3 +462,13 @@ function showRemoveModal(locId) {
         }
     });
 }
+
+function onChangeTheme(value) {
+    console.log(value);
+    const elBody = document.querySelector('body')
+    elBody.removeAttribute('class')
+    if (value !== 'theme-1') elBody.setAttribute('class',`main-layout ${value}`)
+    else elBody.setAttribute('class','main-layout')
+}   
+
+
