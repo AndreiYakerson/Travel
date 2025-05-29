@@ -1,11 +1,6 @@
-.main-layout {
-    display: grid;
-
-}
 
 .main-content-layout {
     display: grid;
-    grid-template-columns: minmax(auto, 340px) minmax(60%, 1fr);
-    grid-column: 1/-1;
+
     height: 100vh;
 }

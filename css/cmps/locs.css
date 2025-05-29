@@ -1,6 +1,8 @@
 .locs-container {
-    grid-column: 1;
-
+    display: grid;
+    gap: 1em;
+    /* grid-column: 1;
+    max-width: 340px; */
     padding: 0.5em;
 
     background-color: var(--clr-sec-base);
@@ -16,8 +18,16 @@
     color: var(--clr-third-base);
 }
 
+.loc-list-container {
+    display: grid;
+    margin: .5em;
+}
+
+
+
 .loc-list {
     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 
     gap: 1em;
 
@@ -28,15 +38,16 @@
 /* location container */
 .loc-list li {
     display: grid;
+    /* grid-template-columns: 2fr 1fr; */
 
+    width: 100%;
     padding: .5em;
-    gap: .5em;
 
     text-align: center;
-    
+
     border: 1px solid var(--clr-primary--1);
     border-radius: 1vh;
-    background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
+    /* background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1)); */
 }
 
 .loc-list li span {
@@ -50,8 +61,9 @@
     grid-template-columns: 1fr 1fr 1fr;
 
     justify-content: space-between;
-    gap: 1em;
+    /* gap: 1em; */
 }
+
 
 .loc-list li .stars {
     grid-column: 3;
@@ -98,6 +110,7 @@
 
 .loc-filter {
     margin-top: 1em;
+    max-width: 340px;
 
     padding: 0.3em;
 
@@ -114,7 +127,7 @@
 
 .loc-filter input[type=text] {
     width: 98%;
-    
+
     margin-bottom: .5em;
 }
 
@@ -125,7 +138,7 @@
 
     width: 120px;
     height: 120px;
-    
+
     border-radius: 50%;
     /* background-image: conic-gradient(orange 0%, orange 64%, blue 64%, blue 81%, black 81%, black 100%); */
 }
@@ -144,21 +157,24 @@
     color: var(--clr-third-base);
 }
 
+.loc-stats h3 {
+margin: 1em;}
+
 .loc-stats ul {
     display: inline-block;
 
     list-style-type: none;
-    
+
     text-transform: capitalize;
 }
 
 .loc-stats .pie-label {
     display: inline-block;
-    
+
     margin-inline-end: 0.3em;
-    
+
     width: 1em;
     height: 1em;
-    
+
     background-color: black;
 }
