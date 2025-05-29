@@ -32,48 +32,53 @@
         </div>
         <!-- <div class="locs-container-div"> -->
         <section class="locs-container">
-            <section class="selected-loc">
-                <h2>Location <span class="loc-name"></span> <span class="loc-rate"></span></h2>
-                <h4>Distance <span class="loc-distance"></span> </h4>
-                <h4 class="loc-address"></h4>
-                <button onclick="app.onCopyLoc()">Copy location</button>
-                <button onclick="app.onShareLoc()">Share location</button>
-                <input name="loc-copier" />
-            </section>
-            <section class="loc-filter">
-                <div>
-                    <input name="filter-by-txt" type="text" placeholder="Search location"
-                        oninput="app.onSetFilterBy({txt: this.value})" />
-                </div>
-                <div>
-                    <label>
-                        Min Rate:
-                        <input name="filter-by-rate" type="range" min="0" max="5" value="0" class="filter-rate-range"
-                            onchange="this.title=this.value;app.onSetFilterBy({minRate: this.value})" />
-                    </label>
-                </div>
-                <p>
-                    Sort by:
-                    <select class="sort-by" onchange="app.onSetSortBy()">
-                        <option value="name">Name</option>
-                        <option value="rate" selected>Rate</option>
-                        <option value="createdAt">Creation Time</option>
-                    </select>
-                    <label>
-                        <input checked class="sort-desc" type="checkbox" oninput="app.onSetSortBy()" />
-                        Descending
-                    </label>
-                </p>
-            </section>
-            <h3 class="locs-header">Locations</h3>
-            <ul class="loc-list"></ul>
-            <section class="loc-stats">
-                <h3>Statistics</h3>
+            <div class="selected-and-filtter container ">
+                <section class="selected-loc">
+                    <h2>Location <span class="loc-name"></span> <span class="loc-rate"></span></h2>
+                    <h4>Distance <span class="loc-distance"></span> </h4>
+                    <h4 class="loc-address"></h4>
+                    <button onclick="app.onCopyLoc()">Copy location</button>
+                    <button onclick="app.onShareLoc()">Share location</button>
+                    <input name="loc-copier" />
+                </section>
+                 <section class="loc-stats">
                 <div class="loc-stats-rate">
+                    <h3>Statistics</h3>
                     <h4>By last update:</h4>
                     <div class="pie"></div>
                     <ul class="legend"></ul>
                 </div>
+                <section class="loc-filter">
+                    <div>
+                        <input name="filter-by-txt" type="text" placeholder="Search location"
+                            oninput="app.onSetFilterBy({txt: this.value})" />
+                    </div>
+                    <div>
+                        <label>
+                            Min Rate:
+                            <input name="filter-by-rate" type="range" min="0" max="5" value="0" class="filter-rate-range"
+                                onchange="this.title=this.value;app.onSetFilterBy({minRate: this.value})" />
+                        </label>
+                    </div>
+                    <p>
+                        Sort by:
+                        <select class="sort-by" onchange="app.onSetSortBy()">
+                            <option value="name">Name</option>
+                            <option value="rate" selected>Rate</option>
+                            <option value="createdAt">Creation Time</option>
+                        </select>
+                        <label>
+                            <input checked class="sort-desc" type="checkbox" oninput="app.onSetSortBy()" />
+                            Descending
+                        </label>
+                    </p>
+                </section>
+            </div>
+            <div class="loc-list-container">
+            <h3 class="locs-header">Locations</h3>
+                <ul class="loc-list"></ul>
+            </div>
+           
             </section>
         </section>
         <!-- </div> -->
