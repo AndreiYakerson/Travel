@@ -16,6 +16,7 @@ window.app = {
     onShareLoc,
     onSetSortBy,
     onSetFilterBy,
+    onChangeTheme,
 }
 
 function onInit() {
@@ -459,3 +460,11 @@ function showRemoveModal(locId) {
         }
     });
 }
+
+function onChangeTheme(value) {
+    console.log(value);
+    const elBody = document.querySelector('body')
+    elBody.removeAttribute('class')
+    if (value !== 'theme-1') elBody.setAttribute('class',`main-layout ${value}`)
+    else elBody.setAttribute('class','main-layout')
+}   
