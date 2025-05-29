@@ -24,8 +24,8 @@
 
 }
 
-.theme-1 {
-  /* Color palette theme-1 */
+.theme-2 {
+  /* Color palette theme-2 */
 
     /* Primary*/
     --clr-primary--1: gold;   
@@ -38,7 +38,7 @@
     --clr-sec-1: #1766d4;
   
     /* Accent*/
-   --clr-third--1: #0f44ca;   
+   --clr-third--1: #1553f0;   
     --clr-third-base: #0609a7; 
     --clr-third-1: #2a6674;    
   
@@ -46,6 +46,30 @@
     --clr-input: white;        
     --clr-selected: #5cdbf8;
     --clr-rate: gold;
+}
+
+.theme-3 {
+  /* Color palette theme-3 */
+
+    /* Primary*/
+    --clr-primary--1: gold;   
+    --clr-primary-base: #0f44ca; 
+    --clr-primary-1: rgb(14, 13, 13);    
+  
+    /* Secondary*/
+    --clr-sec--1: #068139;
+    --clr-sec-base: #288e08;
+    --clr-sec-1: #3ae50f;
+  
+    /* Accent*/
+   --clr-third--1: gold;   
+    --clr-third-base: gold; 
+    --clr-third-1: #2a6674;    
+  
+  /* Special component colors */
+    --clr-input: white;        
+    --clr-selected: #5cdbf8;
+    --clr-rate: #0f44ca;
 }
 
 /* Another theme */
