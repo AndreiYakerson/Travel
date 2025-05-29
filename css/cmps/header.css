@@ -29,7 +29,8 @@ header h1 {
     grid-row: 1;
     grid-auto-flow: column;
 
-    padding: 1em;
+    justify-content: flex-end;
+    margin: 1em;
 }
 
 .form-search {
