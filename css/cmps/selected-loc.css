@@ -1,21 +1,49 @@
 .selected-loc {
     grid-column: 1;
-   
+    /* width: 400px; */
     max-height: 0em;
     height: 0;
-   
+
     overflow: hidden;
     transition: .5s;
-   
+
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: var(--clr-third--1);
 }
 
+.selected-loc h2,h4 {
+    grid-column: 1/-1;
+}
+.selected-loc button{
+    margin: 1em;
+}
+
+.loc-list li {
+    text-align: center;
+
+    background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
+}
+
+
 .selected-loc.show {
     height: auto;
     max-height: 15em;
-   
-    padding: 0.5em;
+    display: grid;
+    grid-template-columns: 1fr 1fr;	
+    padding: .5em;
+    gap: .5em;
+
+    overflow: hidden;
+    transition: .5s;
+
+    
+    border: 1px solid var(--clr-primary--1);
+    border-radius: 1vh;
+    
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: var(--clr-third--1);
+
+    /* padding: 0.5em; */
 }
 
 .selected-loc input[name=loc-copier] {
