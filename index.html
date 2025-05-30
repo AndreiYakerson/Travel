@@ -13,7 +13,6 @@
     <header>
         <h1>TravelTip</h1>
         <div class="search-container">
-
             <form class="form-search" onsubmit="app.onSearchAddress(event)">
                 <select class="select-theme" onchange="app.onChangeTheme(value)">
                     <option value="theme-1">Default theme</option>
@@ -22,17 +21,17 @@
                 </select>
                 <input type="text" name="address" placeholder="Search For Location" />
                 <button title="Search">🔍</button>
-                <button type="button" title="My Position" onclick="app.onPanToUserPos()" class="btn-user-pos">&nbsp;</button>
-            </div>
+                <button type="button" title="My Position" onclick="app.onPanToUserPos()"
+                    class="btn-user-pos">&nbsp;</button>
+        </div>
         </form>
     </header>
     <main class="main-content-layout">
         <div class="map-container">
             <div class="map"></div>
         </div>
-        <!-- <div class="locs-container-div"> -->
         <section class="locs-container">
-            <div class="selected-and-filtter container ">
+            <div class="selected-and-flitter container ">
                 <section class="selected-loc">
                     <h2>Location <span class="loc-name"></span> <span class="loc-rate"></span></h2>
                     <h4>Distance <span class="loc-distance"></span> </h4>
@@ -41,13 +40,6 @@
                     <button onclick="app.onShareLoc()">Share location</button>
                     <input name="loc-copier" />
                 </section>
-                 <section class="loc-stats">
-                <div class="loc-stats-rate">
-                    <h3>Statistics</h3>
-                    <h4>By last update:</h4>
-                    <div class="pie"></div>
-                    <ul class="legend"></ul>
-                </div>
                 <section class="loc-filter">
                     <div>
                         <input name="filter-by-txt" type="text" placeholder="Search location"
@@ -56,7 +48,8 @@
                     <div>
                         <label>
                             Min Rate:
-                            <input name="filter-by-rate" type="range" min="0" max="5" value="0" class="filter-rate-range"
+                            <input name="filter-by-rate" type="range" min="0" max="5" value="0"
+                                class="filter-rate-range"
                                 onchange="this.title=this.value;app.onSetFilterBy({minRate: this.value})" />
                         </label>
                     </div>
@@ -74,14 +67,21 @@
                     </p>
                 </section>
             </div>
-            <div class="loc-list-container">
+                    <section class="loc-stats">
+                        <div class="loc-stats-rate">
+                            <h3>Statistics</h3>
+                            <h4>By last update:</h4>
+                            <div class="pie"></div>
+                            <ul class="legend"></ul>
+                        </div>
+                    </section>
             <h3 class="locs-header">Locations</h3>
+            <div class="loc-list-container">
                 <ul class="loc-list"></ul>
             </div>
-           
-            </section>
+
         </section>
-        <!-- </div> -->
+
     </main>
     <pre class="debug" hidden></pre>
     <div class="user-msg"></div>

@@ -1,6 +1,7 @@
-
 .main-content-layout {
     display: grid;
+    grid-template-rows: 1fr ;
+    grid-row: 3;
 
     height: 100vh;
 }

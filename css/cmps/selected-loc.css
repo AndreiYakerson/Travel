@@ -29,8 +29,7 @@ h4 {
 .selected-loc.show {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    
-    max-width: 340px;
+
     max-height: 12em;
     height: auto;
 
@@ -47,7 +46,6 @@ h4 {
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     background-color: var(--clr-third--1);
 
-    /* padding: 0.5em; */
 }
 
 .selected-loc input[name=loc-copier] {
@@ -56,4 +54,14 @@ h4 {
 
 .loc-rate {
     color: var(--clr-rate);
+}
+
+.selected-and-flitter {
+    display: grid;
+    grid-area: selected-and-flitter;
+
+    
+    justify-items: stretch;
+
+    gap: 1em;
 }

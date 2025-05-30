@@ -43,3 +43,8 @@ button:hover {
 .smaller {
     font-size: .8em;
 }
+
+.select-theme {
+    height:  2em;
+    cursor: pointer;
+}

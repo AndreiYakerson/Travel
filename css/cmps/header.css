@@ -1,7 +1,6 @@
 header {
     position: relative;
     display: grid;
-    /* grid-template-columns: minmax(auto, 60%) minmax(20%, 1fr); */
     grid-column: 1/-1;
 
     padding: 0.3em;
