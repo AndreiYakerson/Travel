@@ -13,18 +13,18 @@
     <header>
         <h1>TravelTip</h1>
         <div class="search-container">
-            <form class="form-search" onsubmit="app.onSearchAddress(event)">
-                <select class="select-theme" onchange="app.onChangeTheme(value)">
-                    <option value="theme-1">Default theme</option>
-                    <option value="theme-2">Aqua theme</option>
-                    <option value="theme-3">Green theme</option>
-                </select>
-                <input type="text" name="address" placeholder="Search For Location" />
-                <button title="Search">🔍</button>
-                <button type="button" title="My Position" onclick="app.onPanToUserPos()"
-                    class="btn-user-pos">&nbsp;</button>
-        </div>
         </form>
+        <input type="text" name="address" placeholder="Search For Location" />
+        <button title="Search">🔍</button>
+        <button type="button" title="My Position" onclick="app.onPanToUserPos()"
+        class="btn-user-pos">&nbsp;</button>
+    </div>
+    <form class="choose-theme btn" onsubmit="app.onSearchAddress(event)">
+        <select class="select-theme" onchange="app.onChangeTheme(value)">
+            <option value="theme-1">Default theme</option>
+            <option value="theme-2">Aqua theme</option>
+            <option value="theme-3">Green theme</option>
+        </select>
     </header>
     <main class="main-content-layout">
         <div class="map-container">
