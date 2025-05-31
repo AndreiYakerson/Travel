@@ -389,8 +389,6 @@ function showUpdateModal(locId) {
                     const placeValue = document.getElementById("swal-input1").value
                     const ratingValue = document.getElementById("swal-input2").value
 
-
-
                     if (result && placeValue && ratingValue <= 5 && ratingValue > 0) {
                         locService.getById(locId)
                             .then(loc => {
@@ -405,7 +403,7 @@ function showUpdateModal(locId) {
                                     })
 
                                 Swal.fire({
-                                    title: "New location added",
+                                    title: "Location successfully edited!",
                                     text: `Place: ${loc.name}`,
                                     icon: "success",
                                     iconColor: "#3F5BAA",
