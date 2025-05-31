@@ -35,6 +35,10 @@
         ;
     }
 
+    .loc-stats-rate {
+        margin-block-end: 25px;
+    }
+
 }
 
 
