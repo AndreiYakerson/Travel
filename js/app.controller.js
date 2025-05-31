@@ -135,6 +135,7 @@ function onUpdateLoc(locId) {
 
 
 function onSelectLoc(locId) {
+    document.querySelector('header').scrollIntoView({ behavior: 'smooth' })
     return locService.getById(locId)
         .then(displayLoc)
         .catch(err => {
@@ -144,6 +145,7 @@ function onSelectLoc(locId) {
 }
 
 function displayLoc(loc) {
+
     var distance
     const curUserPos = locService.getCurPos()
     const locPos = { lat: loc.geo.lat, lng: loc.geo.lng }
@@ -386,8 +388,8 @@ function showUpdateModal(locId) {
                     const placeValue = document.getElementById("swal-input1").value
                     const ratingValue = document.getElementById("swal-input2").value
 
-                    
-                    
+
+
                     if (result && placeValue && ratingValue <= 5 && ratingValue > 0) {
                         locService.getById(locId)
                             .then(loc => {
@@ -469,8 +471,8 @@ function onChangeTheme(value) {
     console.log(value);
     const elBody = document.querySelector('body')
     elBody.removeAttribute('class')
-    if (value !== 'theme-1') elBody.setAttribute('class',`main-layout ${value}`)
-    else elBody.setAttribute('class','main-layout')
-}   
+    if (value !== 'theme-1') elBody.setAttribute('class', `main-layout ${value}`)
+    else elBody.setAttribute('class', 'main-layout')
+}
 
 
