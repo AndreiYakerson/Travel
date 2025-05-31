@@ -156,14 +156,18 @@
     display: grid;
 
     align-self: center;
-    text-decoration: underline;
-    text-underline-offset: 5px;
-    text-decoration-thickness: 2px;
     text-align: center;
-
     color: var(--clr-third-base);
 }
 
+.loc-stats h3,
+h4 {
+        line-height: 1.5;
+
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    text-decoration-thickness: 2px;
+}
 
 .loc-stats ul {
     display: inline-block;
