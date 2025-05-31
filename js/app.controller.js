@@ -303,10 +303,10 @@ function showAddModal(locName, geo) {
          and rate:`,
         html: `
             <label for="">Place: 
-          <input placeholder="Place name" id="swal-input1" value="${locName}" class="swal2-input">
+          <input style="width: 80%; margin-block: 20px;" placeholder="Place name" id="swal-input1" value="${locName}" class="swal2-input">
           </label><br>
             <label for="">Rate: 
-          <input placeholder="Rate (1-5)" id="swal-input2" value="3" class="swal2-input">
+          <input style="width: 80%;" type="number" min="1" max="5" placeholder="Rate (1-5)" id="swal-input2" value="3" class="swal2-input">
             </label>
         `,
         color: "#3F5BAA",
@@ -317,7 +317,7 @@ function showAddModal(locName, geo) {
             const placeValue = document.getElementById("swal-input1").value
             const ratingValue = document.getElementById("swal-input2").value
 
-            if (result && placeValue && ratingValue) {
+            if (result && placeValue && ratingValue <= 5 && ratingValue > 0) {
 
 
                 const loc = {
@@ -350,7 +350,7 @@ function showAddModal(locName, geo) {
             } else {
                 Swal.fire({
                     title: "Error",
-                    text: `Required place and rate!`,
+                    text: `Required place and valid rate!`,
                     icon: "error",
                     background: "#f0f0f0",
                     color: "#3F5BAA",
@@ -372,10 +372,10 @@ function showUpdateModal(locId) {
                 and rate:`,
                 html: `
                 <label for="">Place: 
-                <input placeholder="Place name" id="swal-input1" value="${objLoc.name}" class="swal2-input">
+                <input style="width: 80%; margin-block: 20px;" placeholder="Place name" id="swal-input1" value="${objLoc.name}" class="swal2-input">
                 </label><br>
                 <label for="">Rate: 
-                <input placeholder="Rate (1-5)" id="swal-input2" value="${objLoc.rate}" class="swal2-input">
+                <input style="width: 80%;" type="number" min="1" max="5" placeholder="Rate (1-5)" id="swal-input2" value="${objLoc.rate}" class="swal2-input">
                 </label>
                 `,
                 color: "#3F5BAA",
@@ -386,7 +386,9 @@ function showUpdateModal(locId) {
                     const placeValue = document.getElementById("swal-input1").value
                     const ratingValue = document.getElementById("swal-input2").value
 
-                    if (result && placeValue && ratingValue) {
+                    
+                    
+                    if (result && placeValue && ratingValue <= 5 && ratingValue > 0) {
                         locService.getById(locId)
                             .then(loc => {
                                 loc.name = placeValue
@@ -412,7 +414,7 @@ function showUpdateModal(locId) {
                     } else {
                         Swal.fire({
                             title: "Error",
-                            text: `Required place and rate!`,
+                            text: `Required place and valid rate!`,
                             icon: "error",
                             background: "#f0f0f0",
                             color: "#3F5BAA",
