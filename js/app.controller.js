@@ -49,7 +49,7 @@ function renderLocs(locs) {
         }
 
         return `
-        <li onclick="app.onSelectLoc('${loc.id}')" class="loc ${className}" data-id="${loc.id}">
+        <li onclick="app.onSelectLoc('${loc.id}',this)" class="loc ${className}" data-id="${loc.id}">
             <h4>  
                 <span>${loc.name}</span>
                 <span ${elShowState}>Distance ${distance} km</span>
@@ -134,8 +134,9 @@ function onUpdateLoc(locId) {
 }
 
 
-function onSelectLoc(locId) {
-    document.querySelector('header').scrollIntoView({ behavior: 'smooth' })
+function onSelectLoc(locId,el) {
+    const elHeader = document.querySelector('header')
+   if (!el.classList.contains('active'))  scrollTo.scrollIntoView({ behavior: 'smooth' })
     return locService.getById(locId)
         .then(displayLoc)
         .catch(err => {
