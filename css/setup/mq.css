@@ -3,12 +3,12 @@
     header {
         display: grid;
         grid-template:
-            "h1 h1" 
+            "h1 h1"
             "search-container search-container"
             "choose-theme choose-theme"
             / auto
         ;
-
+        justify-items: center;
         justify-content: center;
         row-gap: .5em;
         padding-block-end: 1em;
