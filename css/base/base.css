@@ -1,13 +1,11 @@
 html {
-    margin: 1em;
     font-family: 'fredoka', sans-serif;
-    background-color: var(--clr-primary-1);
     color: var(--clr-primary-base);
 }
 
 body {
     display: grid;
-    background-color: var(--clr-sec--1);
+    /* background-color: var(--clr-sec--1); */
     overflow-x: hidden;
 }
 

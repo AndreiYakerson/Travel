@@ -8,7 +8,10 @@
             "choose-theme choose-theme"
             / auto
         ;
+
         justify-content: center;
+        row-gap: .5em;
+        padding-block-end: 1em;
 
     }
 
@@ -38,9 +41,6 @@
 /* //////////////////////////////////////////////////////////////////////// */
 @media (min-width: 1000px) {
 
-    html {
-        margin: .5em;
-    }
 
     /* header h1 {
         grid-column: 1/3;
