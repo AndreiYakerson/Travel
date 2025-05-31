@@ -306,10 +306,10 @@ function showAddModal(locName, geo) {
          and rate:`,
         html: `
             <label for="">Place: 
-          <input style="width: 80%; margin-block: 20px;" placeholder="Place name" id="swal-input1" value="${locName}" class="swal2-input">
+          <input style="width: 60%; margin-block: 20px;" placeholder="Place name" id="swal-input1" value="${locName}" class="swal2-input">
           </label><br>
             <label for="">Rate: 
-          <input style="width: 80%;" type="number" min="1" max="5" placeholder="Rate (1-5)" id="swal-input2" value="3" class="swal2-input">
+          <input style="width: 60%;" type="number" min="1" max="5" placeholder="Rate (1-5)" id="swal-input2" value="3" class="swal2-input">
             </label>
         `,
         color: "#3F5BAA",
@@ -375,10 +375,10 @@ function showUpdateModal(locId) {
                 and rate:`,
                 html: `
                 <label for="">Place: 
-                <input style="width: 80%; margin-block: 20px;" placeholder="Place name" id="swal-input1" value="${objLoc.name}" class="swal2-input">
+                <input style="width: 60%; margin-block: 20px;" placeholder="Place name" id="swal-input1" value="${objLoc.name}" class="swal2-input">
                 </label><br>
                 <label for="">Rate: 
-                <input style="width: 80%;" type="number" min="1" max="5" placeholder="Rate (1-5)" id="swal-input2" value="${objLoc.rate}" class="swal2-input">
+                <input style="width: 60%;" type="number" min="1" max="5" placeholder="Rate (1-5)" id="swal-input2" value="${objLoc.rate}" class="swal2-input">
                 </label>
                 `,
                 color: "#3F5BAA",
