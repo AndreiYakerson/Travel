@@ -136,7 +136,7 @@ function onUpdateLoc(locId) {
 
 function onSelectLoc(locId,el) {
     const elHeader = document.querySelector('header')
-   if (!el.classList.contains('active'))  scrollTo.scrollIntoView({ behavior: 'smooth' })
+   if (!el.classList.contains('active'))  elHeader.scrollIntoView({ behavior: 'smooth' })
     return locService.getById(locId)
         .then(displayLoc)
         .catch(err => {
