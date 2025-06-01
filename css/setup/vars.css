@@ -4,7 +4,7 @@
     /* Primary (Rich Black) */
   --clr-primary--1: #3A3A3D;   /* noticeably lighter black */
   --clr-primary-base: #1F1F21; /* main soft black */
-  --clr-primary-1: #0d0de0;    /* deep black */
+  --clr-primary-1: #000000;    /* deep black */
 
   /* Secondary (Neutral Grays) */
   --clr-sec--1: #e0e2e6;       /* brighter neutral gray */
