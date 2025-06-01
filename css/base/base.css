@@ -5,7 +5,7 @@ html {
 
 body {
     display: grid;
-    /* background-color: var(--clr-sec--1); */
+    min-width: 400px;
     overflow-x: hidden;
 }
 

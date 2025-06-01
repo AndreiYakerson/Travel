@@ -1,15 +1,14 @@
-@media (max-width: 780px) {
+@media (max-width: 790px) {
 
     header {
         display: grid;
         grid-template:
             "h1 h1"
-            "search-container search-container"
-            "choose-theme choose-theme"
-            / auto
+            "choose-theme search-container"
+            / auto 
         ;
         justify-items: center;
-        justify-content: center;
+        justify-content: space-evenly;
         row-gap: .5em;
         padding-block-end: 1em;
 
@@ -18,11 +17,7 @@
     header h1 {
         grid-template:
             "choose-theme h1 search-container " auto
-            / 33%;
-
-        /* justify-self: center; */
-
-        /* margin: 0.3em 0; */
+            / 1fr;
     }
 
     .main-content-layout {
@@ -47,7 +42,7 @@
 
 }
 
-@media (min-width: 780px) {
+@media (min-width: 790px) {
     header {
         grid-template:
             "choose-theme h1 search-container " auto
