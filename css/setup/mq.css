@@ -41,6 +41,10 @@
         ;
     }
 
+    .loc-stats-rate {
+        margin-block-end: 25px;
+    }
+
 }
 
 @media (min-width: 780px) {
