@@ -1,4 +1,4 @@
-@media (max-width: 700px) {
+@media (max-width: 780px) {
 
     header {
         display: grid;
@@ -16,7 +16,13 @@
     }
 
     header h1 {
-        margin: 0.3em 0;
+        grid-template:
+            "choose-theme h1 search-container " auto
+            / 33%;
+
+        /* justify-self: center; */
+
+        /* margin: 0.3em 0; */
     }
 
     .main-content-layout {
@@ -37,12 +43,32 @@
 
 }
 
+@media (min-width: 780px) {
+    header {
+        grid-template:
+            "choose-theme h1 search-container " auto
+            / 33%;
 
-/* //////////////////////////////////////////////////////////////////////// */
-@media (min-width: 1000px) {
+        /* justify-content: space-between; */
+    }
+
+    header h1 {
+        margin: .5em;
+    }
+
+    .choose-theme {
+        justify-self: flex-start;
+
+    }
+
+}
 
 
-    /* header h1 {
+    /* //////////////////////////////////////////////////////////////////////// */
+    @media (min-width: 1000px) {
+
+
+        /* header h1 {
         grid-column: 1/3;
         grid-row: 1;
         text-align: center;
@@ -56,46 +82,50 @@
         margin: 1em;
     } */
 
-    .map-container {
-        grid-column: 2;
-        grid-row: 1/3;
+        .choose-theme {
+            /* justify-self: flex-start; */
+        }
+
+        .map-container {
+            grid-column: 2;
+            grid-row: 1/3;
+        }
+
+        .locs-container {
+            grid-template:
+                "selected-and-flitter" auto
+                "locs-header" 20px
+                "loc-list-container"
+                "loc-stats" auto
+                / auto
+            ;
+
+            grid-column: 1;
+            height: 100vh;
+        }
+
+        .selected-and-flitter {
+            grid-area: selected-and-flitter;
+        }
+
+        .loc-list-container {
+            overflow-x: hidden;
+            overflow-y: auto;
+            grid-area: loc-list-container;
+        }
+
+        .locs-header {
+            grid-area: locs-header;
+
+        }
+
+        .loc-stats {
+            grid-area: loc-stats;
+        }
+
+        .main-content-layout {
+            grid-column: 1/-1;
+            grid-template-columns: 340px 1fr;
+        }
+
     }
-
-    .locs-container {
-        grid-template:
-            "selected-and-flitter" auto
-            "locs-header" 20px
-            "loc-list-container"
-            "loc-stats" auto
-            / auto
-        ;
-
-        grid-column: 1;
-        height: 100vh;
-    }
-
-    .selected-and-flitter {
-        grid-area: selected-and-flitter;
-    }
-
-    .loc-list-container {
-        overflow-x: hidden;
-        overflow-y: auto;
-        grid-area: loc-list-container;
-    }
-
-    .locs-header {
-        grid-area: locs-header;
-
-    }
-
-    .loc-stats {
-        grid-area: loc-stats;
-    }
-
-    .main-content-layout {
-        grid-column: 1/-1;
-        grid-template-columns: 340px 1fr;
-    }
-
-}
