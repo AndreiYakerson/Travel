@@ -1,5 +1,6 @@
 .selected-loc {
     grid-column: 1;
+
     max-height: 0em;
     height: 0;
 
@@ -60,7 +61,7 @@ h4 {
     display: grid;
     grid-area: selected-and-flitter;
 
-    
+
     justify-items: stretch;
 
     gap: 1em;

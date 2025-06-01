@@ -5,10 +5,11 @@
         grid-template:
             "h1 h1"
             "choose-theme search-container"
-            / auto 
-        ;
+            / auto;
+
         justify-items: center;
         justify-content: space-evenly;
+
         row-gap: .5em;
         padding-block-end: 1em;
 
@@ -62,49 +63,48 @@
 }
 
 
-    /* //////////////////////////////////////////////////////////////////////// */
-    @media (min-width: 1000px) {
+/* //////////////////////////////////////////////////////////////////////// */
+@media (min-width: 1000px) {
 
-        .map-container {
-            grid-column: 2;
-            grid-row: 1/3;
-        }
-
-        .locs-container {
-            grid-template:
-                "selected-and-flitter" auto
-                "locs-header" 20px
-                "loc-list-container"
-                "loc-stats" auto
-                / auto
-            ;
-
-            grid-column: 1;
-            height: 100vh;
-        }
-
-        .selected-and-flitter {
-            grid-area: selected-and-flitter;
-        }
-
-        .loc-list-container {
-            overflow-x: hidden;
-            overflow-y: auto;
-            grid-area: loc-list-container;
-        }
-
-        .locs-header {
-            grid-area: locs-header;
-
-        }
-
-        .loc-stats {
-            grid-area: loc-stats;
-        }
-
-        .main-content-layout {
-            grid-column: 1/-1;
-            grid-template-columns: 340px 1fr;
-        }
-
+    .map-container {
+        grid-column: 2;
+        grid-row: 1/3;
     }
+
+    .locs-container {
+        grid-template:
+            "selected-and-flitter" auto
+            "locs-header" 20px
+            "loc-list-container"
+            "loc-stats" auto
+            / auto
+        ;
+
+        grid-column: 1;
+        height: 100vh;
+    }
+
+    .selected-and-flitter {
+        grid-area: selected-and-flitter;
+    }
+
+    .loc-list-container {
+        overflow-x: hidden;
+        overflow-y: auto;
+        grid-area: loc-list-container;
+    }
+
+    .locs-header {
+        grid-area: locs-header;
+    }
+
+    .loc-stats {
+        grid-area: loc-stats;
+    }
+
+    .main-content-layout {
+        grid-column: 1/-1;
+        grid-template-columns: 340px 1fr;
+    }
+
+}

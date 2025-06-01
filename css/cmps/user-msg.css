@@ -1,16 +1,16 @@
 .user-msg {
     position: fixed;
-    
+
     bottom: -100px;
     right: 10px;
-    
+
     padding: 10px;
-    
+
     background-color: #111;
 }
 
 .user-msg.open {
     bottom: 10px;
-    
+
     transition: bottom .5s;
 }

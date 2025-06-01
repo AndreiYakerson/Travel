@@ -1,12 +1,12 @@
 .locs-container {
     display: grid;
-    gap: 1em;
     grid-template:
         " selected-and-flitter loc-stats" auto
         " locs-header locs-header" auto
         " loc-list-container loc-list-container" auto
     ;
 
+    gap: 1em;
     padding: 0.5em;
 
     background-color: var(--clr-sec-base);
@@ -14,21 +14,21 @@
 
 .locs-header {
     grid-area: locs-header;
-    /* margin: 1em; */
+
     align-self: center;
+
+    text-align: center;
     text-decoration: dashed underline;
     text-underline-offset: 5px;
     text-decoration-thickness: 2px;
-    text-align: center;
+
     color: var(--clr-third-base);
 }
 
 .loc-list-container {
-    grid-area: loc-list-container;
     display: grid;
 
-    /* place-content: space-between; */
-    /* margin: .5em; */
+    grid-area: loc-list-container;
 }
 
 
@@ -46,17 +46,16 @@
 /* location container */
 .loc-list li {
     display: grid;
-    /* grid-template-columns: 2fr 1fr; */
 
     width: 100%;
     height: auto;
+
     padding: .5em;
 
     text-align: center;
 
     border: 1px solid var(--clr-primary--1);
     border-radius: 1vh;
-    /* background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1)); */
 }
 
 .loc-list li span {
@@ -70,7 +69,6 @@
     grid-template-columns: 1fr 1fr 1fr;
 
     justify-content: space-between;
-    /* gap: 1em; */
 }
 
 
@@ -118,9 +116,6 @@
 }
 
 .loc-filter {
-    /* grid-area: loc-filter ; */
-    /* margin-top: 1em; */
-
     height: 100px;
     padding: 0.3em;
 
@@ -156,6 +151,7 @@
     display: grid;
 
     align-self: center;
+
     text-align: center;
     color: var(--clr-third-base);
 }
@@ -163,15 +159,14 @@
 
 .loc-stats ul {
     display: inline-block;
-    
+
     list-style-type: none;
-    
+
     text-transform: capitalize;
 }
 
 .loc-stats-rate h3,
-.loc-stats-rate h4
-{
+.loc-stats-rate h4 {
     line-height: 1.5;
 
     text-decoration: underline;
@@ -181,11 +176,11 @@
 
 .loc-stats .pie-label {
     display: inline-block;
-
-    margin-inline-end: 0.3em;
-
+    
     width: 1em;
     height: 1em;
+    
+    margin-inline-end: 0.3em;
 
     background-color: black;
 }

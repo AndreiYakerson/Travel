@@ -2,12 +2,13 @@ header {
     display: grid;
     grid-template:
         "choose-theme h1 search-container " auto
-        / auto
-    ;
-    align-items: center;
+        / auto;
+
     grid-column: 1/-1;
 
+    align-items: center;
     padding: 0.3em;
+
     color: var(--clr-primary-base);
     background-color: var(--clr-sec--1);
 }
@@ -15,16 +16,17 @@ header {
 header h1 {
     grid-area: h1;
     justify-self: center;
-    font-family: 'Rubik_Doodle_Shadow';
 
     letter-spacing: .25em;
+
+    font-family: 'Rubik_Doodle_Shadow';
 }
 
 .search-container {
     grid-area: search-container;
 
     margin-inline-end: 1em;
-    
+
     justify-self: flex-end;
 }
 
