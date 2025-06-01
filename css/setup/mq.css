@@ -48,7 +48,6 @@
             "choose-theme h1 search-container " auto
             / 33%;
 
-        /* justify-content: space-between; */
     }
 
     header h1 {
@@ -65,25 +64,6 @@
 
     /* //////////////////////////////////////////////////////////////////////// */
     @media (min-width: 1000px) {
-
-
-        /* header h1 {
-        grid-column: 1/3;
-        grid-row: 1;
-        text-align: center;
-    }
-
-    .search-container {
-        grid-column: 2;
-        grid-row: 1;
-
-        justify-self: flex-end;
-        margin: 1em;
-    } */
-
-        .choose-theme {
-            /* justify-self: flex-start; */
-        }
 
         .map-container {
             grid-column: 2;

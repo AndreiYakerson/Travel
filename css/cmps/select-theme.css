@@ -1,5 +1,31 @@
+.choose-theme.btn {
+    grid-area: choose-theme;
+
+    height: 39px;
+
+    margin-inline-start: 1em;
+
+    padding: 6px 10px;
+
+    cursor: pointer;
+
+    border-radius: .5vh;
+
+    border: 1px solid var(--clr-sec-1);
+    background-color: var(--clr-input);
+
+}
 
 .select-theme {
-    height:  2em;
+    appearance: none;
     cursor: pointer;
+
+    width: 100%;
+    padding: 6px 10px;
+
+    word-spacing: 0.5rem;
+    text-align: center;
+
+    font-weight: bold;
+    font-family: 'Rubik_Doodle_Shadow', sans-serif;
 }
