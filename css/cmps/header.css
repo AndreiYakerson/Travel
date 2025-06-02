@@ -28,5 +28,5 @@ header h1 {
 
 .search-container input {
     padding: 6px 10px;
-    max-width: 150px;
+    min-width: 100px;
 }

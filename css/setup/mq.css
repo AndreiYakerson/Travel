@@ -2,18 +2,29 @@
     header {
         display: grid;
         grid-template:
-            "h1"
-            "choose-theme"
-            "search-container"
+            "h1" 1fr
+            "choose-theme" 1fr
+            "search-container" 1fr
             / auto;
 
-        justify-items: center;
-        justify-content: space-evenly;
+        /* justify-items: center; */
+        /* justify-content: space-evenly; */
 
         row-gap: .5em;
         padding-block-end: 1em;
 
     }
+
+    .search-container input {
+        width: 75%;
+    }
+
+    .choose-theme.btn {
+        width: 75%;
+        text-align: center;
+    }
+
+
 
     .sort-items {
         display: block;
