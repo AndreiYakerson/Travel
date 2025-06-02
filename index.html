@@ -49,13 +49,13 @@
                             oninput="app.onSetFilterBy({txt: this.value})" />
                     </div>
                     <div class="sort-items">
-                        <div>
+                        <div class="filter-rate-range">
                             <label>
                                 Min Rate:
-                                <input name="filter-by-rate" type="range" min="0" max="5" value="0"
-                                    class="filter-rate-range"
+                                <input name="filter-by-rate" type="range" min="0" max="5" value="0"      
                                     onchange="this.title=this.value;app.onSetFilterBy({minRate: this.value})" />
                             </label>
+                            <article class="rate-value">0</article>
                         </div>
                         <p>
                             Sort by:

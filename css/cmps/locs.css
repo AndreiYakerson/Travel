@@ -115,32 +115,6 @@
     background-color: var(--clr-sec--1);
 }
 
-.loc-filter {
-    padding: 0.3em;
-
-
-    border-radius: 1vh;
-    border: 1px var(--clr-primary--1) solid;
-    background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
-
-}
-
-.sort-items {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.sort-by {
-    border-radius: 1vh;
-    background-color: var(--clr-input);
-}
-
-.loc-filter input[type=text] {
-    width: 98%;
-
-    margin-bottom: .5em;
-}
 
 .pie {
     display: inline-block;

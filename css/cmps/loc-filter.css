@@ -1,0 +1,52 @@
+.loc-filter {
+    padding: 0.3em;
+
+
+    border-radius: 1vh;
+    border: 1px var(--clr-primary--1) solid;
+    background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
+
+}
+
+.sort-items {
+    display: flex;
+    flex-wrap:wrap;
+    
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 0.5em;
+}
+
+.sort-by {
+    border-radius: 1vh;
+    background-color: var(--clr-input);
+}
+
+.loc-filter input[type=text] {
+    width: 98%;
+
+    margin-bottom: .5em;
+}
+
+.filter-rate-range {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+}
+
+.filter-rate-range label {
+    width: min-content;
+}
+
+.rate-value {
+    display: flex;
+    width: 20px;
+    height: 20px;
+
+    justify-content: center;
+    align-items: center;
+    border-radius: .5vh;
+    border: 1px var(--clr-primary--1) solid;
+    background-color: var(--clr-input);
+}

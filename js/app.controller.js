@@ -26,6 +26,7 @@ function onInit() {
         .then(() => {
             // onPanToTokyo()
             mapService.addClickListener(onAddLoc)
+
         })
         .catch(err => {
             console.error('OOPs:', err)
@@ -212,6 +213,7 @@ function getFilterByFromQueryParams() {
 
     document.querySelector('input[name="filter-by-txt"]').value = txt
     document.querySelector('input[name="filter-by-rate"]').value = minRate
+    document.querySelector('.rate-value').innerText = minRate
 }
 
 function getLocIdFromQueryParams() {
@@ -232,9 +234,11 @@ function onSetSortBy() {
 
     locService.setSortBy(sortBy)
     loadAndRenderLocs()
+
 }
 
 function onSetFilterBy({ txt, minRate }) {
+    showRateValue()
     const filterBy = locService.setFilterBy({ txt, minRate: +minRate })
     utilService.updateQueryParams(filterBy)
     loadAndRenderLocs()
@@ -458,6 +462,11 @@ function showRemoveModal(locId) {
             });
         }
     });
+}
+
+function showRateValue() {
+
+    document.querySelector('.rate-value').innerText = document.querySelector('[name="filter-by-rate"]').title
 }
 
 function onChangeTheme(value) {
