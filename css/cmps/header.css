@@ -24,9 +24,6 @@ header h1 {
 
 .search-container {
     grid-area: search-container;
-
-    /* margin-inline-end: 1em; */
-
 }
 
 .search-container input {

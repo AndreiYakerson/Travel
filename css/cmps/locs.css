@@ -5,8 +5,8 @@
         " locs-header" auto
         " loc-list-container" auto
         " loc-stats" auto
-     / auto;
-gap: 1em;
+        / auto;
+    gap: 1em;
     padding: 0.5em;
 
     background-color: var(--clr-sec-base);

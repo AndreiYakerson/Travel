@@ -229,10 +229,6 @@ function onSetSortBy() {
     const sortBy = {}
     sortBy[prop] = (isDesc) ? -1 : 1
 
-    // Shorter Syntax:
-    // const sortBy = {
-    //     [prop] : (isDesc)? -1 : 1
-    // }
 
     locService.setSortBy(sortBy)
     loadAndRenderLocs()
@@ -251,8 +247,6 @@ function renderLocStats() {
 }
 
 function handleStats(stats, selector) {
-    // stats = { low: 37, medium: 11, high: 100, total: 148 }
-    // stats = { low: 5, medium: 5, high: 5, baba: 55, mama: 30, total: 100 }
     const labels = cleanStats(stats)
     const colors = utilService.getColors()
 

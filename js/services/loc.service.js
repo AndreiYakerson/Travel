@@ -1,20 +1,6 @@
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 
-// const sampleLoc = {
-//     id: 'GEouN',
-//     name: 'Dahab, Egypt',
-//     rate: 5,
-//     geo: {
-//         address: 'Dahab, South Sinai, Egypt',
-//         lat: 28.5096676,
-//         lng: 34.5165187,
-//         zoom: 11
-//     },
-//     createdAt: 1706562160181,
-//     updatedAt: 1706562160181
-// }
-
 const PAGE_SIZE = 5
 const DB_KEY = 'locs'
 var gSortBy = { rate: -1 }
@@ -191,22 +177,4 @@ function _createLoc(loc) {
     loc.createdAt = loc.updatedAt = utilService.randomPastTime()
     return loc
 }
-
-
-// unused functions
-// function getEmptyLoc(name = '') {
-//     return {
-//         id: '',
-//         name,
-//         rate: 1,
-//         createdAt: Date.now(),
-//         updatedAt: Date.now(),
-//         geo: {
-//             lat: 0,
-//             lng: 0,
-//             zoom: 10,
-//             address: ''
-//         }
-//     }
-// }
 
