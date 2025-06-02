@@ -466,7 +466,7 @@ function onChangeTheme(value) {
     elBody.removeAttribute('class')
     if (value !== 'theme-1') elBody.setAttribute('class', `main-layout ${value}`)
     else elBody.setAttribute('class', 'main-layout')
-    document.querySelector('.select-theme').value = ''
+    // document.querySelector('.select-theme').value = ''
 }
 
 
