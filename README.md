@@ -1,91 +1,159 @@
 # TravelTip
-#### The app that gets you somewhere
 
+**TravelTip** is a web app for managing and exploring favorite locations, with map integration, filtering, sorting, and theming.
 
-## Description
-TravelTip is an app that keeps a list of favorite locations
+---
 
-## Main Features
-- The app allows the user to keep and manage locations
-- The user can also search for an address and pan the map to that point
-- The User can pan the map to his own geo-location
+## Features
 
-## Locations CRUDL 
-- Create – click on the map prompts for name and rate
-- Read – Selected location details (see below) 
-- Update – can update location rate
-- Delete – can delete a location
-- List - Including filtering, sorting and grouping
+- **Location Management (CRUDL):**
+  - **Create:** Add a new location by clicking on the map, entering a name and rating.
+  - **Read:** View a list of locations with details and statistics.
+  - **Update:** Edit location name and rating.
+  - **Delete:** Remove locations from your list.
+  - **List:** Filter and sort locations by name, rating, or creation time.
 
-## Selected Location
-- Displayed in the header
-- Location is active in the list (gold color)
-- Marker on the map
-- Reflected in query params 
-- Copy url to clipboard
-- Share via Web-Share API
+- **Map Integration:**
+  - Search for addresses and pan the map to them.
+  - Pan to your current geolocation.
+  - Markers for selected locations.
+  - Copy or share location links.
 
-## Location
-Here is the format of the location object:
+- **UI & Theming:**
+  - Responsive layout for mobile and desktop.
+  - Multiple color themes (Default, Aqua, Green).
+  - Custom fonts: Fredoka and Rubik Doodle Shadow.
+  - Stylish, accessible forms and controls.
+
+- **Statistics:**
+  - Pie chart showing locations by last update.
+  - Legend for easy interpretation.
+
+---
+
+## Usage
+
+### Main UI Elements
+
+- **Header:**  
+  - App title, search bar, and theme selector.
+- **Main Content:**  
+  - **Map:** Interactive map with markers.
+  - **Locations Panel:**  
+    - Selected location details.
+    - Filter and sort controls.
+    - Locations list.
+    - Statistics section.
+
+### Example Location Object
+
 ```js
 {
-    id: 'GEouN',
-    name: 'Dahab, Egypt',
-    rate: 5,
-    geo: {
-      address: 'Dahab, South Sinai, Egypt',
-      lat: 28.5096676,
-      lng: 34.5165187,
-      zoom: 11
-    },
-    createdAt: 1706562160181,
-    updatedAt: 1706562160181
-  }
-  ```
+  id: 'GEouN',
+  name: 'Dahab, Egypt',
+  rate: 5,
+  geo: {
+    address: 'Dahab, South Sinai, Egypt',
+    lat: 28.5096676,
+    lng: 34.5165187,
+    zoom: 11
+  },
+  createdAt: 1706562160181,
+  updatedAt: 1706562160181
+}
+```
+
+---
+
+## Project Structure
+
+```
+css/
+  base/         # Base styles (reset, layout, helpers)
+  cmps/         # Component styles (header, locations, map, theme selector, etc.)
+  setup/        # Variables, media queries, typography
+  assets/fonts/ # Custom fonts
+js/
+  services/     # Utility, map, and location services
+  app.controller.js # Main app logic and DOM interaction
+index.html      # Main HTML file
+```
+
+---
+
 ## Services
+
 ```js
 export const locService = {
-    query,
-    getById,
-    remove,
-    save,
-    setFilterBy,
-    setSortBy,
-    getLocCountByRateMap
+  query,
+  getById,
+  remove,
+  save,
+  setFilterBy,
+  setSortBy,
+  setUserPos,
+  getLocCountByRateMap,
+  getLocCountByLastUpdate
 }
 
 export const mapService = {
-    initMap,
-    getPosition,
-    setMarker,
-    panTo,
-    lookupAddressGeo,
-    addClickListener
+  initMap,
+  getUserPosition,
+  setMarker,
+  panTo,
+  lookupAddressGeo,
+  addClickListener
 }
 ```
+
+---
 
 ## Controller
-```js
-// To make things easier in this project structure 
-// functions that are called from DOM are defined on a global app object
 
+All main actions are exposed on the global `app` object for easy DOM integration:
+
+```js
 window.app = {
-    onRemoveLoc,
-    onUpdateLoc,
-    onSelectLoc,
-    onPanToUserPos,
-    onSearchAddress,
-    onCopyLoc,
-    onShareLoc,
-    onSetSortBy,
-    onSetFilterBy
+  onRemoveLoc,
+  onUpdateLoc,
+  onSelectLoc,
+  onPanToUserPos,
+  onSearchAddress,
+  onCopyLoc,
+  onShareLoc,
+  onSetSortBy,
+  onSetFilterBy,
+  onChangeTheme
 }
 ```
 
-Here is a sample usage:
-```html
-<button onclick="app.onCopyLoc()">Copy location</button>
-<button onclick="app.onShareLoc()">Share location</button>
-```
+---
 
+## Theming
 
+- Switch between themes using the theme selector in the header.
+- Themes are defined in `css/setup/vars.css` and applied via body classes.
+
+---
+
+## Fonts
+
+- **Fredoka** and **Rubik Doodle Shadow** are included for a modern, playful look.
+
+---
+
+## Getting Started
+
+1. Clone the repository.
+2. Open `index.html` in your browser.
+3. Use the app to add, view, and manage locations!
+
+---
+
+## License
+
+Fonts are licensed under the [SIL Open Font License](https://openfontlicense.org).
+
+---
+
+*Made with ❤️ for travel lovers!*
