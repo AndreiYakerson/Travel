@@ -48,26 +48,28 @@
                         <input name="filter-by-txt" type="text" placeholder="Search location"
                             oninput="app.onSetFilterBy({txt: this.value})" />
                     </div>
-                    <div>
-                        <label>
-                            Min Rate:
-                            <input name="filter-by-rate" type="range" min="0" max="5" value="0"
-                                class="filter-rate-range"
-                                onchange="this.title=this.value;app.onSetFilterBy({minRate: this.value})" />
-                        </label>
+                    <div class="sort-items">
+                        <div>
+                            <label>
+                                Min Rate:
+                                <input name="filter-by-rate" type="range" min="0" max="5" value="0"
+                                    class="filter-rate-range"
+                                    onchange="this.title=this.value;app.onSetFilterBy({minRate: this.value})" />
+                            </label>
+                        </div>
+                        <p>
+                            Sort by:
+                            <select class="sort-by" onchange="app.onSetSortBy()">
+                                <option value="name">Name</option>
+                                <option value="rate" selected>Rate</option>
+                                <option value="createdAt">Creation Time</option>
+                            </select>
+                            <label>
+                                <input checked class="sort-desc" type="checkbox" oninput="app.onSetSortBy()" />
+                                Descending
+                            </label>
+                        </p>
                     </div>
-                    <p>
-                        Sort by:
-                        <select class="sort-by" onchange="app.onSetSortBy()">
-                            <option value="name">Name</option>
-                            <option value="rate" selected>Rate</option>
-                            <option value="createdAt">Creation Time</option>
-                        </select>
-                        <label>
-                            <input checked class="sort-desc" type="checkbox" oninput="app.onSetSortBy()" />
-                            Descending
-                        </label>
-                    </p>
                 </section>
             </div>
             <section class="loc-stats">

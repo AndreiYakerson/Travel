@@ -116,13 +116,19 @@
 }
 
 .loc-filter {
-    height: 100px;
     padding: 0.3em;
+
 
     border-radius: 1vh;
     border: 1px var(--clr-primary--1) solid;
     background: linear-gradient(to top, var(--clr-sec--1), var(--clr-sec-base), var(--clr-sec-1));
 
+}
+
+.sort-items {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .sort-by {

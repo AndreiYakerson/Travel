@@ -15,6 +15,12 @@
 
     }
 
+    .sort-items {
+        display: block;
+        /* justify-content: space-around;
+        align-items: center; */
+    }
+
 
 }
 
@@ -40,6 +46,7 @@
 
 
 }
+
 /* //////////////////////////////////////////////////////////////////////// */
 
 @media (min-width: 810px) {
@@ -63,6 +70,7 @@
         justify-self: flex-end;
 
     }
+
     .select-theme {
         width: 100%;
     }
@@ -70,14 +78,15 @@
     .choose-theme {
         justify-self: flex-start;
     }
-    .locs-container{
+
+    .locs-container {
 
         grid-template:
-        " selected-and-flitter loc-stats" auto
-        " locs-header locs-header" auto
-        " loc-list-container loc-list-container" auto
+            " selected-and-flitter loc-stats" auto
+            " locs-header locs-header" auto
+            " loc-list-container loc-list-container" auto
         ;
-            }
+    }
 
 }
 

@@ -3,7 +3,7 @@
 
     max-height: 0em;
     height: 0;
-
+    
     overflow: hidden;
     transition: .5s;
 
@@ -17,7 +17,13 @@ h4 {
 }
 
 .selected-loc button {
-    margin: 1em;
+    border: 1px dashed var(--clr-sec-1);
+    
+    width: 125px;
+    
+    justify-self: center;
+    
+    padding: .5em;
 }
 
 .loc-list li {
@@ -31,11 +37,11 @@ h4 {
     display: grid;
     grid-template-columns: 1fr 1fr;
 
-    max-height: 12em;
+    max-height: 14em;
     height: auto;
 
-    padding: .5em;
-    gap: .5em;
+    padding: 1em;
+    gap: 1em;
 
     overflow: hidden;
     transition: .5s;
@@ -51,6 +57,8 @@ h4 {
 
 .selected-loc input[name=loc-copier] {
     opacity: 0;
+    width: 0;
+    height: 0;
 }
 
 .loc-rate {

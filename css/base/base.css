@@ -26,12 +26,11 @@ button {
 
     border: 0;
     border-radius: .2em;
-    background-color: var(--clr-third-1);
 }
 
 button:hover {
     color: var(--clr-third-base);
-    background-color: #111;
+    background-color: var(--clr-primary-base);
 }
 
 .muted {
