@@ -1,12 +1,12 @@
 .locs-container {
     display: grid;
     grid-template:
-        " selected-and-flitter loc-stats" auto
-        " locs-header locs-header" auto
-        " loc-list-container loc-list-container" auto
-    ;
-
-    gap: 1em;
+        " selected-and-flitter" auto
+        " locs-header" auto
+        " loc-list-container" auto
+        " loc-stats" auto
+     / auto;
+gap: 1em;
     padding: 0.5em;
 
     background-color: var(--clr-sec-base);
@@ -176,10 +176,10 @@
 
 .loc-stats .pie-label {
     display: inline-block;
-    
+
     width: 1em;
     height: 1em;
-    
+
     margin-inline-end: 0.3em;
 
     background-color: black;

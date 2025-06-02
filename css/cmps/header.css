@@ -25,11 +25,11 @@ header h1 {
 .search-container {
     grid-area: search-container;
 
-    margin-inline-end: 1em;
+    /* margin-inline-end: 1em; */
 
-    justify-self: flex-end;
 }
 
 .search-container input {
     padding: 6px 10px;
+    max-width: 150px;
 }

@@ -1,4 +1,25 @@
-@media (max-width: 790px) {
+@media (max-width: 420px) {
+    header {
+        display: grid;
+        grid-template:
+            "h1"
+            "choose-theme"
+            "search-container"
+            / auto;
+
+        justify-items: center;
+        justify-content: space-evenly;
+
+        row-gap: .5em;
+        padding-block-end: 1em;
+
+    }
+
+
+}
+
+
+@media (min-width: 420px) {
 
     header {
         display: grid;
@@ -15,35 +36,10 @@
 
     }
 
-    header h1 {
-        grid-template:
-            "choose-theme h1 search-container " auto
-            / 1fr;
-    }
-
-    .main-content-layout {
-        grid-template-rows: 60% auto;
-        grid-row: 3;
-
-        height: 100vh;
-    }
-
-    .locs-container {
-        grid-template:
-            "selected-and-flitter"
-            "locs-header" 50px
-            "loc-list-container"
-            "loc-stats"
-        ;
-    }
-
-    .loc-stats-rate {
-        margin-block-end: 25px;
-    }
 
 }
 
-@media (min-width: 790px) {
+@media (min-width: 810px) {
     header {
         grid-template:
             "choose-theme h1 search-container " auto
@@ -55,10 +51,30 @@
         margin: .5em;
     }
 
-    .choose-theme {
-        justify-self: flex-start;
+    .choose-theme.btn {
+        margin-inline-start: .5em;
+    }
+
+    .search-container {
+        margin-inline-end: .5em;
+        justify-self: flex-end;
 
     }
+    .select-theme {
+        width: 100%;
+    }
+
+    .choose-theme {
+        justify-self: flex-start;
+    }
+    .locs-container{
+
+        grid-template:
+        " selected-and-flitter loc-stats" auto
+        " locs-header locs-header" auto
+        " loc-list-container loc-list-container" auto
+        ;
+            }
 
 }
 
@@ -69,6 +85,14 @@
     .map-container {
         grid-column: 2;
         grid-row: 1/3;
+    }
+
+    .choose-theme.btn {
+        margin-inline-start: 2em;
+    }
+
+    .search-container {
+        margin-inline-end: 2em;
     }
 
     .locs-container {

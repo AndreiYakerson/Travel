@@ -5,7 +5,7 @@ html {
 
 body {
     display: grid;
-    min-width: 400px;
+    /* min-width: 400px; */
     overflow-x: hidden;
 }
 
@@ -22,8 +22,8 @@ input[type=number] {
 }
 
 button {
-    padding: 6px 10px;
-    margin: 2px;
+    /* padding: 6px 10px;
+    margin: 2px; */
 
     cursor: pointer;
     transition: background-color .5s;
