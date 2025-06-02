@@ -9,7 +9,7 @@
     
     border-radius: .5vh;
     border: 1px solid var(--clr-sec-1);
-    background-color: var(--clr-input);
+    background-color: var(--clr-sec-base);
 }
 
 .select-theme {
