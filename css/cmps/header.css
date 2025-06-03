@@ -1,5 +1,5 @@
 header {
-    display: grid;
+    /* display: grid; */
     grid-template:
         "choose-theme h1 search-container " auto
         / auto;
@@ -12,11 +12,12 @@ header {
 
     color: var(--clr-primary-base);
     background-color: var(--clr-sec--1);
+
 }
 
 header h1 {
     grid-area: h1;
-    justify-self: center;
+    /* justify-self: center; */
 
     letter-spacing: .25em;
 

@@ -7,19 +7,22 @@
             "search-container" 1fr
             / auto;
 
-        /* justify-items: center; */
-        /* justify-content: space-evenly; */
+            justify-items: center;
+
 
         row-gap: .5em;
         padding-block-end: 1em;
 
     }
 
+    
+
     .sort-items {
         display: block;
         /* justify-content: space-around;
         align-items: center; */
     }
+
 
 
 }
@@ -37,7 +40,7 @@
             / auto;
 
         justify-items: center;
-        justify-content: space-evenly;
+
 
         row-gap: .5em;
         padding-block-end: 1em;

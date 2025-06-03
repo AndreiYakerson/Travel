@@ -1,18 +1,15 @@
 .choose-theme.btn {
     grid-area: choose-theme;
+    justify-self: center;
 
     height: 39px;
 
-    padding: 6px 10px;
-
-    cursor: pointer;
     
     border-radius: .5vh;
     border: 1px solid var(--clr-sec-1);
     background-color: var(--clr-sec-base);
-}
 
-.select-theme {
+    max-width: 200px;
     
     padding: 6px 10px;
     
@@ -21,7 +18,7 @@
     
     font-weight: bold;
     font-family: 'Rubik_Doodle_Shadow', sans-serif;
-
+    
     appearance: none;
     cursor: pointer;
 }
