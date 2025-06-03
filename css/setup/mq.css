@@ -15,15 +15,15 @@
 
     }
 
-    
+    .form-search input {
+        width: 75vw;
+    }
 
     .sort-items {
         display: block;
         /* justify-content: space-around;
         align-items: center; */
     }
-
-
 
 }
 
